@@ -192,18 +192,46 @@
     .photo-ring {
       width: 100%; height: 100%;
       border-radius: 50%;
-      background: var(--accent-grad);
-      padding: 4px;
+      position: relative;
       display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 0 40px rgba(56,189,248,.2);
+      box-shadow: 0 0 40px rgba(56,189,248,.15);
+    }
+    /* Arco giratorio estilo spinner Android */
+    .photo-ring::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: conic-gradient(
+        from 0deg,
+        transparent    0deg,
+        #38bdf8       45deg,
+        #818cf8      270deg,
+        transparent  271deg
+      );
+      animation: spin-arc 2s linear infinite;
+    }
+    /* Máscara interior: recorta el centro y deja visible solo el trazo */
+    .photo-ring::after {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      border-radius: 50%;
+      background: var(--bg-primary);
+      z-index: 1;
+    }
+    @keyframes spin-arc {
+      to { transform: rotate(360deg); }
     }
     .photo-ring img {
-      width: 100%; height: 100%;
+      width: calc(100% - 8px);
+      height: calc(100% - 8px);
       border-radius: 50%;
       object-fit: cover;
       object-position: center top;
-      border: 3px solid var(--bg-primary);
       display: block;
+      position: relative;
+      z-index: 2;
     }
 
     /* ─── Certificados ─── */
