@@ -183,31 +183,73 @@
       text-decoration: none; background: rgba(56,189,248,.06);
     }
 
-    /* Avatar / visual data card */
+    /* Foto de perfil hero */
     .hero-visual {
       flex-shrink: 0;
       width: 260px; height: 260px;
       position: relative;
     }
-    .avatar-ring {
+    .photo-ring {
       width: 100%; height: 100%;
       border-radius: 50%;
-      background: conic-gradient(var(--accent) 0% 60%, var(--accent-2) 60% 85%, var(--border) 85% 100%);
+      background: var(--accent-grad);
+      padding: 4px;
       display: flex; align-items: center; justify-content: center;
-      animation: spin-slow 18s linear infinite;
+      box-shadow: 0 0 40px rgba(56,189,248,.2);
     }
-    @keyframes spin-slow { to { transform: rotate(360deg); } }
-    .avatar-inner {
-      width: calc(100% - 10px); height: calc(100% - 10px);
-      border-radius: 50%; background: var(--bg-primary);
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center; gap: .5rem;
-      animation: spin-slow 18s linear infinite reverse;
+    .photo-ring img {
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 3px solid var(--bg-primary);
+      display: block;
     }
-    .avatar-icon { font-size: 4rem; line-height: 1; }
-    .avatar-label {
-      font-size: .7rem; font-weight: 700; letter-spacing: .1em;
-      text-transform: uppercase; color: var(--accent);
+
+    /* ─── Certificados ─── */
+    #certificados { background: var(--bg-secondary); }
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+    .cert-card {
+      background: var(--bg-primary); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.5rem;
+      display: flex; flex-direction: column; gap: 1rem;
+      position: relative; overflow: hidden;
+      transition: border-color var(--transition), transform var(--transition),
+                  box-shadow var(--transition);
+    }
+    .cert-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--accent-grad);
+    }
+    .cert-card:hover {
+      border-color: var(--accent); transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(56,189,248,.1);
+    }
+    .cert-icon {
+      width: 48px; height: 48px; border-radius: 10px;
+      background: rgba(56,189,248,.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; flex-shrink: 0;
+    }
+    .cert-name {
+      font-size: .95rem; font-weight: 700; color: var(--text-primary);
+      line-height: 1.3; flex: 1;
+    }
+    .cert-btn {
+      display: inline-flex; align-items: center; gap: .4rem;
+      background: rgba(56,189,248,.08); border: 1px solid rgba(56,189,248,.2);
+      border-radius: 7px; padding: .5rem .9rem;
+      font-size: .8rem; font-weight: 600; color: var(--accent);
+      transition: background var(--transition), border-color var(--transition);
+      align-self: flex-start;
+    }
+    .cert-btn:hover {
+      background: rgba(56,189,248,.18); border-color: var(--accent);
+      text-decoration: none;
     }
 
     /* Stat chips */
@@ -445,7 +487,7 @@
       section { padding: 4rem 1.25rem; }
 
       .hero-inner { grid-template-columns: 1fr; text-align: center; }
-      .hero-visual { display: none; }
+      .hero-visual { width: 180px; height: 180px; margin: 0 auto; }
       .hero-cta { justify-content: center; }
       .hero-stats { justify-content: center; }
 
@@ -458,6 +500,7 @@
     @media (max-width: 480px) {
       .logros-grid { grid-template-columns: 1fr; }
       .stack-categories { grid-template-columns: 1fr; }
+      .cert-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -472,6 +515,7 @@
       <li><a href="#logros">Logros</a></li>
       <li><a href="#stack">Stack</a></li>
       <li><a href="#formacion">Formación</a></li>
+      <li><a href="#certificados">Certificados</a></li>
       <li><a href="#contacto">Contacto</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menú">
@@ -484,6 +528,7 @@
     <a href="#logros" class="mobile-link">Logros</a>
     <a href="#stack" class="mobile-link">Stack</a>
     <a href="#formacion" class="mobile-link">Formación</a>
+    <a href="#certificados" class="mobile-link">Certificados</a>
     <a href="#contacto" class="mobile-link">Contacto</a>
   </div>
 
@@ -520,11 +565,11 @@
         </div>
 
         <div class="hero-visual reveal">
-          <div class="avatar-ring">
-            <div class="avatar-inner">
-              <div class="avatar-icon">📊</div>
-              <div class="avatar-label">Data Analyst</div>
-            </div>
+          <div class="photo-ring">
+            <img
+              src="foto_corporativa/foto_corporativa.jpeg"
+              alt="William Danilo Solano Álvarez — Data Analyst"
+            />
           </div>
         </div>
       </div>
@@ -653,7 +698,7 @@
         </div>
         <div class="logro-card reveal">
           <span class="logro-icon">🐳</span>
-          <span class="logro-num">CI</span>
+          <span class="logro-num">CI</span> 
           <div class="logro-title">Infraestructura con Docker</div>
           <div class="logro-desc">
             Contenerización de soluciones de analítica para garantizar reproducibilidad,
@@ -802,6 +847,53 @@
             <div class="timeline-inst">SENA — Servicio Nacional de Aprendizaje</div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CERTIFICADOS ═══════════════ -->
+  <section id="certificados">
+    <div class="container">
+      <span class="section-label reveal">Certificados</span>
+      <h2 class="section-title reveal">Formación verificada</h2>
+      <p class="section-desc reveal">
+        Documentos y certificaciones que respaldan mi trayectoria profesional y académica.
+      </p>
+
+      <div class="cert-grid">
+
+        <div class="cert-card reveal">
+          <div class="cert-icon">📄</div>
+          <div class="cert-name">CV William Solano 2026</div>
+          <a href="certificados/CV_William_Solano_2026.pdf" target="_blank" rel="noopener" class="cert-btn">
+            Ver documento →
+          </a>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-icon">🎓</div>
+          <div class="cert-name">Desarrollo Web Front-End</div>
+          <a href="certificados/certificado_desarrollo_web_front-end.pdf" target="_blank" rel="noopener" class="cert-btn">
+            Ver certificado →
+          </a>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-icon">🎓</div>
+          <div class="cert-name">English Basics I</div>
+          <a href="certificados/certificado_english_basics_I.pdf" target="_blank" rel="noopener" class="cert-btn">
+            Ver certificado →
+          </a>
+        </div>
+
+        <div class="cert-card reveal">
+          <div class="cert-icon">🎓</div>
+          <div class="cert-name">English Basics II</div>
+          <a href="certificados/certificado_english_basics_II.pdf" target="_blank" rel="noopener" class="cert-btn">
+            Ver certificado →
+          </a>
+        </div>
+
       </div>
     </div>
   </section>
