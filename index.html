@@ -3,1190 +3,1226 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>William Solano — Data Analyst</title>
-  <meta name="description" content="Data Analyst especializado en Python, Power BI y automatización con IA. Transformo datos en decisiones estratégicas." />
-  <meta name="author" content="William Danilo Solano Álvarez" />
-
-  <!-- Open Graph / LinkedIn -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <meta name="portfolio-version" content="v2.0-full-stack-2026-04-30" />
+  <title>William Solano | Full Stack Developer | Remote-ready</title>
+  <meta name="description" content="Full Stack Developer que crea aplicaciones, sitios web y sistemas internos para ayudar a negocios a vender más y operar mejor." />
+  <meta name="author" content="William Danilo Solano Alvarez" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="William Solano — Data Analyst | Python | Power BI | IA Aplicada" />
-  <meta property="og:description" content="Data Analyst especializado en Python, Power BI y automatización con IA. Reducción del 40% en tiempos de reportería. Dashboards interactivos para decisiones en tiempo real." />
-  <meta property="og:image" content="https://via.placeholder.com/1200x630/0f172a/38bdf8?text=William+Solano+%7C+Data+Analyst" />
-  <meta property="og:url" content="https://Rolo0317.github.io/portafolio-web/" />
+  <meta property="og:title" content="William Solano | Full Stack Developer | Web Applications" />
+  <meta property="og:description" content="Desarrollo soluciones web completas, desde landing pages hasta sistemas a medida, enfocadas en resultados reales." />
+  <meta property="og:image" content="foto_corporativa/foto_corporativa.jpeg" />
+  <meta property="og:url" content="https://rolo0317.github.io/portafolio-web/" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <style>
-    /* ─── Reset & Base ─── */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg-primary:   #000000;
-      --bg-secondary: #060606;
-      --bg-card:      #0a0a0a;
-      --accent:       #00ff41;
-      --accent-2:     #00cc33;
-      --accent-grad:  linear-gradient(135deg, #00ff41 0%, #00cc33 100%);
-      --text-primary: #b8ffb8;
-      --text-muted:   #2d7a2d;
-      --border:       #0d2b0d;
-      --radius:       12px;
-      --transition:   0.35s cubic-bezier(.4,0,.2,1);
-      --font:         'Courier New', Courier, monospace;
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    html { scroll-behavior: smooth; }
+    :root {
+      --bg: #0B0F14;
+      --bg-soft: #0f1621;
+      --card: #121826;
+      --card-strong: #172033;
+      --text: #F8FAFC;
+      --muted: #94A3B8;
+      --soft: #CBD5E1;
+      --accent: #38BDF8;
+      --success: #22C55E;
+      --success-dark: #16A34A;
+      --border: rgba(148, 163, 184, 0.16);
+      --shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
+      --radius: 8px;
+      --radius-sm: 6px;
+      --max: 1120px;
+      --transition: 180ms ease;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 86px;
+    }
 
     body {
-      font-family: var(--font);
-      background: var(--bg-primary);
-      color: var(--text-primary);
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 18% 12%, rgba(56, 189, 248, 0.13), transparent 30%),
+        radial-gradient(circle at 82% 8%, rgba(34, 197, 94, 0.10), transparent 28%),
+        var(--bg);
+      color: var(--text);
       line-height: 1.6;
       overflow-x: hidden;
     }
 
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    /* ─── Scrollbar ─── */
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--bg-primary); }
-    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
-
-    /* ─── Nav ─── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1rem 2rem;
-      background: rgba(0,0,0,.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      transition: var(--transition);
-    }
-    .nav-brand {
-      font-size: 1rem; font-weight: 700; letter-spacing: .02em;
-      background: var(--accent-grad); -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent; background-clip: text;
-    }
-    .nav-links { display: flex; gap: 1.75rem; list-style: none; }
-    .nav-links a {
-      font-size: .875rem; font-weight: 500; color: var(--text-muted);
-      transition: color var(--transition);
-    }
-    .nav-links a:hover { color: var(--accent); text-decoration: none; }
-
-    /* hamburger */
-    .hamburger {
-      display: none; flex-direction: column; gap: 5px;
-      background: none; border: none; cursor: pointer; padding: 4px;
-    }
-    .hamburger span {
-      display: block; width: 24px; height: 2px;
-      background: var(--text-primary); border-radius: 2px;
-      transition: var(--transition);
-    }
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    /* mobile menu */
-    .mobile-menu {
-      display: none; position: fixed; top: 60px; left: 0; right: 0; z-index: 99;
-      background: rgba(0,0,0,.97); padding: 1.5rem 2rem; gap: 1.25rem;
-      flex-direction: column; border-bottom: 1px solid var(--border);
-    }
-    .mobile-menu.open { display: flex; }
-    .mobile-menu a { font-size: 1rem; color: var(--text-muted); }
-    .mobile-menu a:hover { color: var(--accent); text-decoration: none; }
-
-    /* ─── Sections Layout ─── */
-    section { padding: 5rem 2rem; }
-    .container { max-width: 1100px; margin: 0 auto; }
-
-    .section-label {
-      display: inline-block; font-size: .75rem; font-weight: 700;
-      letter-spacing: .12em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: .5rem;
-    }
-    .section-title {
-      font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800;
-      color: var(--text-primary); margin-bottom: 1rem;
-    }
-    .section-desc {
-      color: var(--text-muted); max-width: 55ch; font-size: 1.05rem;
-      margin-bottom: 3rem;
-    }
-
-    /* ─── Reveal on scroll ─── */
-    .reveal {
-      opacity: 0; transform: translateY(32px);
-      transition: opacity .6s ease, transform .6s ease;
-    }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    /* ─── Hero ─── */
-    #hero {
-      min-height: 100vh; display: flex; align-items: center;
-      padding-top: 80px;
-      position: relative; overflow: hidden;
-      background: #000000;
-    }
-    .hero-inner {
-      display: grid; grid-template-columns: 1fr auto;
-      align-items: center; gap: 3rem;
-    }
-    .hero-badge {
-      display: inline-flex; align-items: center; gap: .5rem;
-      background: rgba(0,255,65,.1); border: 1px solid rgba(0,255,65,.25);
-      border-radius: 999px; padding: .35rem .9rem;
-      font-size: .8rem; font-weight: 600; color: var(--accent);
-      margin-bottom: 1.25rem;
-    }
-    .hero-badge::before {
-      content: ''; width: 7px; height: 7px; border-radius: 50%;
-      background: var(--accent); animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: .3; }
-    }
-    .hero-name {
-      font-size: clamp(2.2rem, 6vw, 4rem); font-weight: 900;
-      line-height: 1.1; margin-bottom: .75rem;
-    }
-    .hero-name span {
-      background: var(--accent-grad); -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent; background-clip: text;
-    }
-    .hero-role {
-      font-size: clamp(1rem, 2.5vw, 1.25rem); color: var(--text-muted);
-      margin-bottom: 1.75rem; font-weight: 400;
-    }
-    .hero-role strong { color: var(--text-primary); font-weight: 600; }
-    .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; }
-    .btn {
-      display: inline-flex; align-items: center; gap: .5rem;
-      padding: .75rem 1.5rem; border-radius: 8px;
-      font-size: .9rem; font-weight: 600; cursor: pointer;
-      transition: var(--transition); border: none;
-    }
-    .btn-primary {
-      background: var(--accent-grad); color: #000000;
-    }
-    .btn-primary:hover { filter: brightness(1.15); text-decoration: none; }
-    .btn-outline {
-      background: transparent; color: var(--text-primary);
-      border: 1px solid var(--border);
-    }
-    .btn-outline:hover {
-      border-color: var(--accent); color: var(--accent);
-      text-decoration: none; background: rgba(0,255,65,.06);
-    }
-
-    /* Foto de perfil hero */
-    .hero-visual {
-      flex-shrink: 0;
-      width: 260px; height: 260px;
-      position: relative;
-    }
-    .photo-ring {
-      width: 100%; height: 100%;
-      border-radius: 50%;
-      position: relative;
-      display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 0 40px rgba(0,255,65,.15);
-    }
-    /* Arco giratorio estilo spinner Android */
-    .photo-ring::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 50%;
-      background: conic-gradient(
-        from 0deg,
-        transparent    0deg,
-        #00ff41       45deg,
-        #00cc33      270deg,
-        transparent  271deg
-      );
-      animation: spin-arc 2s linear infinite;
-    }
-    /* Máscara interior: recorta el centro y deja visible solo el trazo */
-    .photo-ring::after {
-      content: '';
-      position: absolute;
-      inset: 4px;
-      border-radius: 50%;
-      background: var(--bg-primary);
-      z-index: 1;
-    }
-    @keyframes spin-arc {
-      to { transform: rotate(360deg); }
-    }
-    .photo-ring img {
-      width: calc(100% - 8px);
-      height: calc(100% - 8px);
-      border-radius: 50%;
-      object-fit: cover;
-      object-position: center top;
+    img {
+      max-width: 100%;
       display: block;
-      position: relative;
-      z-index: 2;
     }
 
-    /* ─── Certificados ─── */
-    #certificados { background: var(--bg-secondary); }
-    .cert-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.25rem;
-    }
-    .cert-card {
-      background: var(--bg-primary); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.5rem;
-      display: flex; flex-direction: column; gap: 1rem;
-      position: relative; overflow: hidden;
-      transition: border-color var(--transition), transform var(--transition),
-                  box-shadow var(--transition);
-    }
-    .cert-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: var(--accent-grad);
-    }
-    .cert-card:hover {
-      border-color: var(--accent); transform: translateY(-4px);
-      box-shadow: 0 16px 36px rgba(0,255,65,.1);
-    }
-    .cert-icon {
-      width: 48px; height: 48px; border-radius: 10px;
-      background: rgba(0,255,65,.1);
-      display: flex; align-items: center; justify-content: center;
-      font-size: .68rem; font-weight: 900; color: var(--accent);
-      letter-spacing: .02em; flex-shrink: 0;
-    }
-    .cert-name {
-      font-size: .95rem; font-weight: 700; color: var(--text-primary);
-      line-height: 1.3; flex: 1;
-    }
-    .cert-btn {
-      display: inline-flex; align-items: center; gap: .4rem;
-      background: rgba(0,255,65,.08); border: 1px solid rgba(0,255,65,.2);
-      border-radius: 7px; padding: .5rem .9rem;
-      font-size: .8rem; font-weight: 600; color: var(--accent);
-      transition: background var(--transition), border-color var(--transition);
-      align-self: flex-start;
-    }
-    .cert-btn:hover {
-      background: rgba(0,255,65,.18); border-color: var(--accent);
+    a {
+      color: inherit;
       text-decoration: none;
     }
 
-    /* Stat chips */
-    .hero-stats {
-      display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 2rem;
+    p {
+      color: var(--muted);
     }
-    .stat-chip {
-      background: var(--bg-card); border: 1px solid var(--border);
-      border-radius: 8px; padding: .6rem 1rem;
-    }
-    .stat-chip .num {
-      font-size: 1.4rem; font-weight: 800;
-      background: var(--accent-grad); -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent; background-clip: text;
-    }
-    .stat-chip .lbl { font-size: .72rem; color: var(--text-muted); display: block; }
 
-    /* ─── Sobre mí ─── */
-    #sobre { background: var(--bg-secondary); }
-    .sobre-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
+    .container {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section-header {
+      max-width: 760px;
+      margin-bottom: 36px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      color: var(--accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    h1, h2, h3 {
+      line-height: 1.12;
+      letter-spacing: 0;
+    }
+
+    h1 {
+      max-width: 940px;
+      font-size: clamp(2.45rem, 7vw, 5.25rem);
+      font-weight: 900;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 850;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 1.18rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .lead {
+      max-width: 740px;
+      color: var(--soft);
+      font-size: clamp(1.02rem, 2vw, 1.2rem);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border: 1px solid transparent;
+      border-radius: var(--radius-sm);
+      font-weight: 800;
+      color: var(--text);
+      cursor: pointer;
+      transition: transform var(--transition), background var(--transition), border-color var(--transition), box-shadow var(--transition);
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--success);
+      color: #04110A;
+      box-shadow: 0 14px 32px rgba(34, 197, 94, 0.22);
+    }
+
+    .btn-primary:hover {
+      background: var(--success-dark);
+    }
+
+    .btn-secondary {
+      background: rgba(56, 189, 248, 0.10);
+      border-color: rgba(56, 189, 248, 0.34);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(56, 189, 248, 0.16);
+      border-color: var(--accent);
+    }
+
+    .btn-ghost {
+      background: rgba(248, 250, 252, 0.04);
+      border-color: var(--border);
+      color: var(--soft);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      color: var(--text);
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(11, 15, 20, 0.82);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .brand strong {
+      font-size: 0.98rem;
+      letter-spacing: 0.02em;
+    }
+
+    .brand span {
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 18px;
+      color: var(--soft);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .nav-links a {
+      transition: color var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .menu-btn {
+      width: 44px;
+      height: 44px;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+    }
+
+    .menu-btn span {
+      width: 20px;
+      height: 2px;
+      background: var(--text);
+      transition: transform var(--transition), opacity var(--transition);
+    }
+
+    .menu-btn.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-btn.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-btn.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+      display: none;
+      padding: 0 16px 18px;
+    }
+
+    .mobile-menu.open {
+      display: grid;
+      gap: 8px;
+    }
+
+    .mobile-menu a {
+      padding: 12px 14px;
+      background: rgba(248, 250, 252, 0.04);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--soft);
+      font-weight: 750;
+    }
+
+    .hero {
+      min-height: calc(100vh - 72px);
+      display: grid;
+      align-items: center;
+      padding: 76px 0 70px;
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 42px;
       align-items: center;
     }
-    .sobre-text p { color: var(--text-muted); margin-bottom: 1rem; font-size: 1rem; }
-    .sobre-text p strong { color: var(--text-primary); }
-    .highlight-box {
-      background: rgba(0,255,65,.07); border-left: 3px solid var(--accent);
-      border-radius: 0 8px 8px 0; padding: 1rem 1.25rem;
-      margin-top: 1.5rem; font-size: .95rem;
-      color: var(--text-primary); font-style: italic;
-    }
-    .sobre-cards { display: flex; flex-direction: column; gap: 1rem; }
-    .info-card {
-      background: var(--bg-primary); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.25rem 1.5rem;
-      display: flex; align-items: center; gap: 1rem;
-      transition: border-color var(--transition), transform var(--transition);
-    }
-    .info-card:hover { border-color: var(--accent); transform: translateX(4px); }
-    .info-card .ic {
-      font-size: .68rem; font-weight: 900; color: var(--accent);
-      letter-spacing: .02em; flex-shrink: 0;
-      width: 44px; height: 44px; border-radius: 10px;
-      background: rgba(0,255,65,.1);
-      display: flex; align-items: center; justify-content: center;
-    }
-    .info-card .ic-text .label { font-size: .72rem; color: var(--text-muted); }
-    .info-card .ic-text .value { font-size: .95rem; font-weight: 600; color: var(--text-primary); }
 
-    /* ─── Logros ─── */
-    #logros { background: var(--bg-primary); }
-    .logros-grid {
+    .hero-copy {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+      gap: 22px;
     }
-    .logro-card {
-      background: var(--bg-card); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.75rem;
-      position: relative; overflow: hidden;
-      transition: border-color var(--transition), transform var(--transition),
-                  box-shadow var(--transition);
-    }
-    .logro-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-      background: var(--accent-grad);
-    }
-    .logro-card:hover {
-      border-color: var(--accent); transform: translateY(-4px);
-      box-shadow: 0 20px 40px rgba(0,255,65,.1);
-    }
-    .logro-icon { font-size: .78rem; font-weight: 900; color: var(--accent); margin-bottom: 1rem; display: block; letter-spacing: .04em; }
-    .logro-num {
-      font-size: 2.5rem; font-weight: 900;
-      background: var(--accent-grad); -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent; background-clip: text;
-      display: block; line-height: 1;
-    }
-    .logro-title { font-size: 1rem; font-weight: 700; margin: .5rem 0 .35rem; }
-    .logro-desc { font-size: .875rem; color: var(--text-muted); }
 
-    /* ─── Stack ─── */
-    #stack { background: var(--bg-secondary); }
-    .stack-categories {
+    .status-pill {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      background: rgba(18, 24, 38, 0.86);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--soft);
+      font-size: 0.86rem;
+      font-weight: 750;
+    }
+
+    .status-pill::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 0 7px rgba(34, 197, 94, 0.10);
+    }
+
+    .hero-actions,
+    .cta-actions,
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-proof {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 8px;
     }
-    .stack-cat {
-      background: var(--bg-primary); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.5rem;
-      transition: border-color var(--transition);
+
+    .proof-item {
+      padding: 16px;
+      background: rgba(18, 24, 38, 0.78);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
     }
-    .stack-cat:hover { border-color: var(--accent-2); }
-    .stack-cat-title {
-      font-size: .75rem; font-weight: 700; text-transform: uppercase;
-      letter-spacing: .1em; color: var(--accent-2); margin-bottom: 1rem;
+
+    .proof-item strong {
+      display: block;
+      color: var(--text);
+      font-size: 1.05rem;
+      margin-bottom: 4px;
     }
-    .tags { display: flex; flex-wrap: wrap; gap: .5rem; }
-    .tag {
-      background: rgba(0,204,51,.1); border: 1px solid rgba(0,204,51,.2);
-      border-radius: 6px; padding: .35rem .7rem;
-      font-size: .8rem; font-weight: 600; color: var(--text-primary);
-      transition: background var(--transition), border-color var(--transition);
+
+    .proof-item span {
+      color: var(--muted);
+      font-size: 0.88rem;
     }
-    .tag:hover { background: rgba(0,204,51,.2); border-color: var(--accent-2); }
-    .tag.accent {
-      background: rgba(0,255,65,.1); border-color: rgba(0,255,65,.25);
+
+    .hero-card {
+      background: linear-gradient(180deg, rgba(18, 24, 38, 0.92), rgba(15, 22, 33, 0.92));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .hero-photo {
+      aspect-ratio: 1 / 1;
+      background: var(--card-strong);
+      overflow: hidden;
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    .hero-card-body {
+      padding: 22px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .hero-card-body h2 {
+      font-size: 1.35rem;
+      margin-bottom: 0;
+    }
+
+    .availability {
+      display: grid;
+      gap: 10px;
+    }
+
+    .availability li {
+      list-style: none;
+      display: flex;
+      gap: 10px;
+      color: var(--soft);
+      font-size: 0.95rem;
+    }
+
+    .availability li::before {
+      content: "+";
+      color: var(--success);
+      font-weight: 900;
+    }
+
+    .about-grid,
+    .experience-grid,
+    .cta-box {
+      display: grid;
+      gap: 26px;
+    }
+
+    .about-panel,
+    .case-card,
+    .service-card,
+    .skill-card,
+    .experience-card,
+    .step-card,
+    .cta-box {
+      background: rgba(18, 24, 38, 0.88);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
+    }
+
+    .about-panel {
+      padding: 24px;
+    }
+
+    .about-panel p + p {
+      margin-top: 14px;
+    }
+
+    .value-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .value-item {
+      padding: 18px;
+      background: rgba(56, 189, 248, 0.07);
+      border: 1px solid rgba(56, 189, 248, 0.16);
+      border-radius: var(--radius);
+    }
+
+    .value-item strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .grid-3,
+    .grid-4,
+    .skills-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .service-card,
+    .skill-card,
+    .step-card {
+      padding: 22px;
+      transition: transform var(--transition), border-color var(--transition), background var(--transition);
+    }
+
+    .service-card:hover,
+    .skill-card:hover,
+    .step-card:hover,
+    .case-card:hover,
+    .experience-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(56, 189, 248, 0.42);
+      background: var(--card-strong);
+    }
+
+    .card-icon {
+      width: 42px;
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.22);
+      border-radius: var(--radius-sm);
       color: var(--accent);
-    }
-    .tag.accent:hover { background: rgba(0,255,65,.2); }
-
-    /* Skill bars */
-    .skill-bar-wrap { margin-top: 1.5rem; }
-    .skill-bar-item { margin-bottom: 1rem; }
-    .skill-bar-header {
-      display: flex; justify-content: space-between;
-      font-size: .82rem; margin-bottom: .4rem;
-    }
-    .skill-bar-track {
-      height: 6px; background: var(--border); border-radius: 99px; overflow: hidden;
-    }
-    .skill-bar-fill {
-      height: 100%; border-radius: 99px; width: 0;
-      background: var(--accent-grad);
-      transition: width 1.2s cubic-bezier(.4,0,.2,1);
+      font-weight: 900;
+      font-size: 0.82rem;
     }
 
-    /* ─── Formación ─── */
-    #formacion { background: var(--bg-primary); }
-    .timeline { position: relative; padding-left: 2rem; }
-    .timeline::before {
-      content: ''; position: absolute; left: 7px; top: 0; bottom: 0;
-      width: 2px; background: var(--border);
+    .steps {
+      margin-top: 34px;
     }
-    .timeline-item {
-      position: relative; margin-bottom: 2.5rem;
-    }
-    .timeline-dot {
-      position: absolute; left: -2rem; top: 4px;
-      width: 14px; height: 14px; border-radius: 50%;
-      background: var(--accent-grad);
-      box-shadow: 0 0 0 4px var(--bg-primary), 0 0 0 6px rgba(0,255,65,.2);
-    }
-    .timeline-card {
-      background: var(--bg-card); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.25rem 1.5rem;
-      transition: border-color var(--transition), transform var(--transition);
-    }
-    .timeline-card:hover { border-color: var(--accent); transform: translateX(4px); }
-    .timeline-year {
-      font-size: .75rem; font-weight: 700; color: var(--accent);
-      text-transform: uppercase; letter-spacing: .08em; margin-bottom: .25rem;
-    }
-    .timeline-title { font-size: 1rem; font-weight: 700; color: var(--text-primary); }
-    .timeline-inst { font-size: .875rem; color: var(--text-muted); margin-top: .2rem; }
 
-    /* ─── Contacto ─── */
-    #contacto {
+    .step-number {
+      color: var(--accent);
+      font-weight: 900;
+      margin-bottom: 10px;
+    }
+
+    .case-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .case-card {
+      padding: 24px;
+      transition: transform var(--transition), border-color var(--transition), background var(--transition);
+    }
+
+    .case-top {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .case-tag {
+      width: fit-content;
+      padding: 6px 10px;
+      background: rgba(34, 197, 94, 0.10);
+      border: 1px solid rgba(34, 197, 94, 0.22);
+      border-radius: 999px;
+      color: #86EFAC;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .case-details {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .case-details div {
+      padding: 14px;
+      background: rgba(11, 15, 20, 0.36);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+    }
+
+    .case-details strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--text);
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .tech-list span,
+    .skill-tags span {
+      display: inline-flex;
+      padding: 7px 10px;
+      background: rgba(248, 250, 252, 0.06);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--soft);
+      font-size: 0.84rem;
+      font-weight: 700;
+    }
+
+    .experience-card {
+      position: relative;
+      padding: 24px;
+      transition: transform var(--transition), border-color var(--transition), background var(--transition);
+    }
+
+    .experience-card::before {
+      content: "";
+      position: absolute;
+      left: 24px;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(var(--accent), transparent);
+      opacity: 0.55;
+    }
+
+    .experience-content {
+      padding-left: 28px;
+    }
+
+    .role-meta {
+      color: var(--accent);
+      font-weight: 800;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+
+    .experience-content ul {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+      color: var(--muted);
+      padding-left: 18px;
+    }
+
+    .skill-card h3 {
+      margin-bottom: 14px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .cta {
+      padding-bottom: 92px;
+    }
+
+    .cta-box {
+      padding: 30px;
       background:
-        radial-gradient(ellipse 70% 60% at 50% 100%, rgba(0,255,65,.08) 0%, transparent 70%),
-        var(--bg-secondary);
-    }
-    .contact-grid {
-      display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;
-      align-items: start;
-    }
-    .contact-info p { color: var(--text-muted); margin-bottom: 2rem; font-size: 1rem; }
-    .contact-links { display: flex; flex-direction: column; gap: .75rem; }
-    .contact-link {
-      display: flex; align-items: center; gap: .9rem;
-      background: var(--bg-primary); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1rem 1.25rem;
-      color: var(--text-primary); font-weight: 500;
-      transition: border-color var(--transition), color var(--transition),
-                  transform var(--transition);
-    }
-    .contact-link:hover {
-      border-color: var(--accent); color: var(--accent);
-      transform: translateX(4px); text-decoration: none;
-    }
-    .contact-link .cl-icon {
-      font-size: .68rem; font-weight: 900; color: var(--accent);
-      letter-spacing: .02em;
-      width: 40px; height: 40px; border-radius: 8px;
-      background: rgba(0,255,65,.1);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
+        linear-gradient(135deg, rgba(56, 189, 248, 0.13), rgba(34, 197, 94, 0.08)),
+        var(--card);
     }
 
-    /* Contact form */
-    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
-    .form-group { display: flex; flex-direction: column; gap: .4rem; }
-    .form-group label { font-size: .82rem; color: var(--text-muted); font-weight: 600; }
-    .form-group input,
-    .form-group textarea {
-      background: var(--bg-primary); border: 1px solid var(--border);
-      border-radius: 8px; padding: .75rem 1rem;
-      color: var(--text-primary); font-family: var(--font);
-      font-size: .9rem; resize: vertical;
-      transition: border-color var(--transition), box-shadow var(--transition);
-      outline: none;
-    }
-    .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(0,255,65,.12);
-    }
-    .form-group textarea { min-height: 120px; }
-    .form-status {
-      font-size: .85rem; padding: .6rem 1rem; border-radius: 8px;
-      display: none;
-    }
-    .form-status.success {
-      background: rgba(34,197,94,.1); border: 1px solid rgba(34,197,94,.3);
-      color: #4ade80; display: block;
-    }
-    .form-status.error {
-      background: rgba(239,68,68,.1); border: 1px solid rgba(239,68,68,.3);
-      color: #f87171; display: block;
+    .cta-box p {
+      max-width: 700px;
+      margin-bottom: 22px;
+      color: var(--soft);
+      font-size: 1.05rem;
     }
 
-    /* ─── Footer ─── */
-    footer {
-      background: var(--bg-primary); border-top: 1px solid var(--border);
-      text-align: center; padding: 2rem;
-      font-size: .82rem; color: var(--text-muted);
-    }
-    footer strong { color: var(--accent); }
-
-    /* ─── Scanlines CRT ─── */
-    body::after {
-      content: '';
-      position: fixed; inset: 0; z-index: 9998; pointer-events: none;
-      background: repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 2px,
-        rgba(0,255,65,.025) 2px,
-        rgba(0,255,65,.025) 4px
-      );
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      color: var(--muted);
+      font-size: 0.92rem;
     }
 
-    /* ─── Glitch nombre hero ─── */
-    @keyframes glitch {
-      0%, 87%, 100% { transform: none; text-shadow: none; clip-path: none; }
-      88% { transform: translateX(-3px); text-shadow:  3px 0 #00ff41, -3px 0 #00cc33; }
-      89% { transform: translateX( 3px); text-shadow: -3px 0 #00ff41,  3px 0 #00cc33; }
-      90% { transform: translateX(-1px) skewX(-4deg); text-shadow: 2px 0 rgba(0,255,65,.6); }
-      91% { transform: none; text-shadow: none; }
-      92% { transform: translateX(2px); text-shadow: -2px 0 #00ff41; }
-      93% { transform: none; text-shadow: none; }
+    .footer-inner {
+      display: grid;
+      gap: 14px;
+      align-items: center;
     }
-    .hero-name { animation: glitch 6s infinite; }
 
-    /* ─── Terminal cursor en rol ─── */
-    .hero-role::after {
-      content: '_';
-      animation: blink-cursor .8s step-end infinite;
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      color: var(--soft);
+      font-weight: 750;
+    }
+
+    .footer-links a:hover {
       color: var(--accent);
     }
-    @keyframes blink-cursor { 50% { opacity: 0; } }
 
-    /* ─── Glow verde en cards al hover ─── */
-    .logro-card:hover  { box-shadow: 0 20px 40px rgba(0,255,65,.12), 0 0 0 1px var(--accent); }
-    .cert-card:hover   { box-shadow: 0 16px 36px rgba(0,255,65,.12), 0 0 0 1px var(--accent); }
-    .info-card:hover   { box-shadow: 0  8px 24px rgba(0,255,65,.08); }
-    .timeline-card:hover { box-shadow: 0 8px 24px rgba(0,255,65,.08); }
-
-    /* ─── Responsive ─── */
-    @media (max-width: 768px) {
-      nav { padding: 1rem 1.25rem; }
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-
-      section { padding: 4rem 1.25rem; }
-
-      .hero-inner { grid-template-columns: 1fr; text-align: center; }
-      .hero-visual { width: 180px; height: 180px; margin: 0 auto; }
-      .hero-cta { justify-content: center; }
-      .hero-stats { justify-content: center; }
-
-      .sobre-grid,
-      .contact-grid { grid-template-columns: 1fr; }
-
-      .timeline { padding-left: 1.5rem; }
+    .floating-whatsapp {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 60;
+      width: 56px;
+      height: 56px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--success);
+      color: #04110A;
+      border-radius: 50%;
+      box-shadow: 0 16px 36px rgba(34, 197, 94, 0.32);
+      font-weight: 900;
+      transition: transform var(--transition), background var(--transition);
     }
 
-    @media (max-width: 480px) {
-      .logros-grid { grid-template-columns: 1fr; }
-      .stack-categories { grid-template-columns: 1fr; }
-      .cert-grid { grid-template-columns: 1fr; }
+    .floating-whatsapp:hover {
+      transform: translateY(-3px) scale(1.03);
+      background: var(--success-dark);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 520ms ease, transform 520ms ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (min-width: 680px) {
+      .grid-3,
+      .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grid-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .case-details {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr auto;
+      }
+    }
+
+    @media (min-width: 940px) {
+      .nav-links {
+        display: flex;
+      }
+
+      .menu-btn,
+      .mobile-menu {
+        display: none !important;
+      }
+
+      .hero-grid {
+        grid-template-columns: minmax(0, 1.45fr) 360px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .grid-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .experience-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 520px) {
+      .section {
+        padding: 68px 0;
+      }
+
+      .hero {
+        padding-top: 52px;
+      }
+
+      .hero-actions .btn,
+      .cta-actions .btn,
+      .card-actions .btn {
+        width: 100%;
+      }
+
+      .hero-proof {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 
 <body>
+  <header class="nav" id="top">
+    <div class="container nav-inner">
+      <a class="brand" href="#hero" aria-label="Ir al inicio">
+        <strong>William Solano</strong>
+        <span>Full Stack Developer</span>
+      </a>
 
-  <!-- ═══════════════ NAV ═══════════════ -->
-  <nav id="navbar">
-    <span class="nav-brand">WS·DataAnalyst</span>
-    <ul class="nav-links">
-      <li><a href="#sobre">Sobre mí</a></li>
-      <li><a href="#logros">Logros</a></li>
-      <li><a href="#stack">Stack</a></li>
-      <li><a href="#formacion">Formación</a></li>
-      <li><a href="#certificados">Certificados</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menú">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
+      <nav class="nav-links" aria-label="Navegacion principal">
+        <a href="#sobre">Sobre mí</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
 
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#sobre" class="mobile-link">Sobre mí</a>
-    <a href="#logros" class="mobile-link">Logros</a>
-    <a href="#stack" class="mobile-link">Stack</a>
-    <a href="#formacion" class="mobile-link">Formación</a>
-    <a href="#certificados" class="mobile-link">Certificados</a>
-    <a href="#contacto" class="mobile-link">Contacto</a>
-  </div>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
 
-  <!-- ═══════════════ HERO ═══════════════ -->
-  <section id="hero">
-    <canvas id="matrixCanvas" style="position:absolute;inset:0;width:100%;height:100%;opacity:.18;pointer-events:none;"></canvas>
-    <div class="container" style="position:relative;z-index:1;">
-      <div class="hero-inner">
-        <div class="hero-content reveal">
-          <div class="hero-badge">Disponible para proyectos</div>
-          <h1 class="hero-name">
-            William<br><span>Danilo Solano</span>
-          </h1>
-          <p class="hero-role">
-            <strong>Data Analyst</strong> · Python · Power BI · Automatización · IA Aplicada
-          </p>
-          <div class="hero-cta">
-            <a href="#contacto" class="btn btn-primary">Contáctame</a>
-            <a href="#logros" class="btn btn-outline">Ver logros</a>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Menu movil">
+      <a href="#sobre">Sobre mí</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="status-pill">Open to remote work (LATAM / US / Global)</span>
+          <h1>Full Stack Developer que crea aplicaciones y sitios web que ayudan a negocios a vender más y operar mejor</h1>
+          <p class="lead">Desarrollo soluciones web completas - desde landing pages hasta sistemas a medida - enfocadas en resultados reales.</p>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/573203914473?text=Hola%20William,%20quiero%20hablar%20sobre%20un%20proyecto%20web" target="_blank" rel="noopener">Hablemos de tu proyecto</a>
+            <a class="btn btn-secondary" href="#proyectos">Ver proyectos</a>
           </div>
-          <div class="hero-stats">
-            <div class="stat-chip">
-              <span class="num">40%</span>
-              <span class="lbl">Reducción reportería</span>
-            </div>
-            <div class="stat-chip">
-              <span class="num">5+</span>
-              <span class="lbl">Años de experiencia</span>
-            </div>
-            <div class="stat-chip">
-              <span class="num">∞</span>
-              <span class="lbl">Datos procesados</span>
-            </div>
-          </div>
-        </div>
 
-        <div class="hero-visual reveal">
-          <div class="photo-ring">
-            <img
-              src="foto_corporativa/foto_corporativa.jpeg"
-              alt="William Danilo Solano Álvarez — Data Analyst"
-            />
+          <div class="hero-proof" aria-label="Resumen profesional">
+            <div class="proof-item">
+              <strong>Frontend + Backend</strong>
+              <span>Interfaces, lógica de negocio y funcionalidades completas.</span>
+            </div>
+            <div class="proof-item">
+              <strong>Business-first</strong>
+              <span>Soluciones pensadas para clientes, procesos y resultados.</span>
+            </div>
           </div>
         </div>
+
+        <aside class="hero-card reveal" aria-label="Perfil profesional">
+          <div class="hero-photo">
+            <img src="foto_corporativa/foto_corporativa.jpeg" alt="William Danilo Solano Alvarez" />
+          </div>
+          <div class="hero-card-body">
+            <h2>William Danilo Solano Alvarez</h2>
+            <ul class="availability">
+              <li>Full Stack Developer</li>
+              <li>Freelance projects available</li>
+              <li>Remote-ready from Colombia</li>
+            </ul>
+            <a class="btn btn-ghost" href="mailto:Daniloalvarez1719@gmail.com">Daniloalvarez1719@gmail.com</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="container about-grid">
+        <div class="section-header reveal">
+          <span class="eyebrow">Sobre mí</span>
+          <h2>Construyo tecnología con foco en negocio, no solo pantallas bonitas.</h2>
+          <p class="lead">Mi trabajo combina desarrollo web, pensamiento de producto y criterio práctico para transformar necesidades reales en soluciones digitales claras, mantenibles y útiles.</p>
+        </div>
+
+        <div class="about-panel reveal">
+          <p>Actualmente trabajo en <strong>ASF Soluciones S.A.S</strong>, desarrollando funcionalidades web, interfaces, lógica de negocio y mejoras para aplicaciones usadas en contextos reales.</p>
+          <p>Me enfoco en entender el problema antes de escribir código: qué proceso se quiere mejorar, qué usuario lo necesita y qué resultado debe generar la solución.</p>
+          <p>También vengo de experiencia en <strong>GROUPCOS</strong>, donde fortalecí mi criterio operativo, la comunicación con equipos y la capacidad de trabajar con procesos, usuarios y necesidades del negocio.</p>
+        </div>
+
+        <div class="value-list reveal">
+          <div class="value-item">
+            <strong>Soluciones completas</strong>
+            <p>Desde estructura visual hasta lógica, datos, formularios, flujos y despliegue.</p>
+          </div>
+          <div class="value-item">
+            <strong>Enfoque comercial</strong>
+            <p>Desarrollo sitios y sistemas pensados para vender, ordenar procesos y reducir fricción.</p>
+          </div>
+          <div class="value-item">
+            <strong>Entrega clara</strong>
+            <p>Comunico avances, cuido detalles y priorizo código mantenible para evolucionar el producto.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="servicios">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Servicios</span>
+          <h2>Desarrollo web para empresas, marcas y equipos que necesitan avanzar.</h2>
+          <p class="lead">Puedo ayudarte a lanzar presencia digital, crear herramientas internas o mejorar un sitio que ya existe.</p>
+        </div>
+
+        <div class="grid-3">
+          <article class="service-card reveal">
+            <span class="card-icon">LP</span>
+            <h3>Landing pages</h3>
+            <p>Paginas profesionales para vender servicios, captar leads, presentar marcas y lanzar campanas con mensajes claros.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="card-icon">APP</span>
+            <h3>Aplicaciones web</h3>
+            <p>Interfaces, formularios, paneles, flujos de usuario y funcionalidades conectadas a necesidades reales.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="card-icon">SYS</span>
+            <h3>Sistemas internos</h3>
+            <p>Herramientas para organizar información, gestionar procesos, reducir trabajo manual y mejorar seguimiento.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="card-icon">AUTO</span>
+            <h3>Automatización</h3>
+            <p>Flujos digitales para simplificar tareas repetitivas, conectar datos y mejorar la eficiencia del equipo.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="card-icon">UX</span>
+            <h3>Rediseno web</h3>
+            <p>Modernización visual, mejor estructura, mensajes más fuertes, mejor responsive y CTAs orientados a conversión.</p>
+          </article>
+
+          <article class="service-card reveal">
+            <span class="card-icon">DEV</span>
+            <h3>Soporte como developer</h3>
+            <p>Apoyo remoto para construir, mantener o mejorar productos web con criterio técnico y orientación a negocio.</p>
+          </article>
+        </div>
+
+        <div class="steps">
+          <div class="section-header reveal">
+            <span class="eyebrow">Como trabajo</span>
+            <h2>Proceso simple, claro y enfocado en resultados.</h2>
+          </div>
+
+          <div class="grid-4">
+            <article class="step-card reveal">
+              <div class="step-number">01</div>
+              <h3>Entiendo el objetivo</h3>
+              <p>Reviso el negocio, el usuario, el problema y la meta principal del proyecto.</p>
+            </article>
+
+            <article class="step-card reveal">
+              <div class="step-number">02</div>
+              <h3>Defino la solucion</h3>
+              <p>Organizo estructura, funcionalidades, contenido y prioridades para construir con direccion.</p>
+            </article>
+
+            <article class="step-card reveal">
+              <div class="step-number">03</div>
+              <h3>Desarrollo y valido</h3>
+              <p>Creo la interfaz, conecto la lógica y reviso la experiencia en mobile y desktop.</p>
+            </article>
+
+            <article class="step-card reveal">
+              <div class="step-number">04</div>
+              <h3>Entrego y mejoro</h3>
+              <p>Dejo el proyecto listo para uso real, despliegue y futuras mejoras.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="proyectos">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Proyectos</span>
+          <h2>Casos de estudio construidos con enfoque de solucion.</h2>
+          <p class="lead">Cada proyecto parte de una necesidad y se convierte en una experiencia funcional, clara y facil de compartir.</p>
+        </div>
+
+        <div class="case-grid">
+          <article class="case-card reveal">
+            <div class="case-top">
+              <span class="case-tag">Sitio narrativo personal</span>
+              <h3>El Tapiz de Mi Vida - Laura Farfán</h3>
+              <p>Una experiencia web para presentar una historia personal de forma visual, emocional y organizada por capitulos.</p>
+            </div>
+
+            <div class="case-details">
+              <div>
+                <strong>Problema</strong>
+                <p>La cliente necesitaba convertir recuerdos, imágenes y momentos importantes en una página clara, emotiva y fácil de compartir.</p>
+              </div>
+              <div>
+                <strong>Solucion</strong>
+                <p>Diseñé y desarrollé una landing narrativa con navegación interna, capítulos, galería visual, secciones temáticas y experiencia responsive.</p>
+              </div>
+              <div>
+                <strong>Resultado</strong>
+                <p>El sitio transforma una historia personal en una experiencia digital profesional, memorable y accesible desde cualquier dispositivo.</p>
+              </div>
+              <div>
+                <strong>Tecnologías</strong>
+                <p>HTML, CSS, JavaScript, responsive design, GitHub Pages.</p>
+              </div>
+            </div>
+
+            <div class="tech-list">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Responsive</span>
+              <span>GitHub Pages</span>
+            </div>
+
+            <div class="card-actions">
+              <a class="btn btn-secondary" href="https://rolo0317.github.io/laura-farfan/" target="_blank" rel="noopener">Ver proyecto</a>
+            </div>
+          </article>
+
+          <article class="case-card reveal">
+            <div class="case-top">
+              <span class="case-tag">Portafolio profesional</span>
+              <h3>Portafolio Full Stack Developer</h3>
+              <p>Landing profesional enfocada en empleo remoto, captación de clientes freelance y posicionamiento técnico.</p>
+            </div>
+
+            <div class="case-details">
+              <div>
+                <strong>Problema</strong>
+                <p>El portafolio necesitaba comunicar valor profesional y servicios de forma directa, no solo mostrar información personal.</p>
+              </div>
+              <div>
+                <strong>Solucion</strong>
+                <p>Reestructure el sitio con hero comercial, servicios, casos de estudio, experiencia, habilidades y llamados a la accion visibles.</p>
+              </div>
+              <div>
+                <strong>Resultado</strong>
+                <p>La página queda preparada para procesos de selección, clientes freelance y conversaciones comerciales con enlaces de contacto directos.</p>
+              </div>
+              <div>
+                <strong>Tecnologías</strong>
+                <p>HTML semántico, CSS responsive, JavaScript ligero, GitHub Pages.</p>
+              </div>
+            </div>
+
+            <div class="tech-list">
+              <span>HTML</span>
+              <span>CSS Grid</span>
+              <span>Flexbox</span>
+              <span>JavaScript</span>
+              <span>Conversion UX</span>
+            </div>
+
+            <div class="card-actions">
+              <a class="btn btn-secondary" href="https://rolo0317.github.io/portafolio-web/" target="_blank" rel="noopener">Ver proyecto</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="experiencia">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Experiencia</span>
+          <h2>Experiencia aplicada a productos, procesos y usuarios reales.</h2>
+          <p class="lead">He trabajado en entornos donde la tecnología debe resolver necesidades concretas, mejorar flujos y entregar valor operativo.</p>
+        </div>
+
+        <div class="experience-grid">
+          <article class="experience-card reveal">
+            <div class="experience-content">
+              <div class="role-meta">Actualidad</div>
+              <h3>Full Stack Developer - ASF Soluciones S.A.S</h3>
+              <p>Desarrollo soluciones web reales combinando frontend, backend, interfaces, funcionalidades y lógica de negocio.</p>
+              <ul>
+                <li>Construcción y mejora de funcionalidades para aplicaciones web.</li>
+                <li>Implementación de interfaces claras, mantenibles y orientadas al usuario.</li>
+                <li>Desarrollo de lógica de negocio para soportar procesos internos.</li>
+                <li>Mejora continua de flujos, estabilidad y experiencia de uso.</li>
+                <li>Análisis de necesidades para convertir requerimientos en soluciones prácticas.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="experience-card reveal">
+            <div class="experience-content">
+              <div class="role-meta">Experiencia anterior</div>
+              <h3>GROUPCOS</h3>
+              <p>Experiencia en un entorno operativo y orientado a procesos, fortaleciendo comunicacion, analisis de necesidades y criterio de negocio.</p>
+              <ul>
+                <li>Trabajo con procesos, información y necesidades de usuarios internos.</li>
+                <li>Participación en dinámicas de mejora operativa y servicio.</li>
+                <li>Desarrollo de habilidades de comunicación, organización y resolución de problemas.</li>
+                <li>Comprension de flujos de trabajo reales para proponer mejoras digitales.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="habilidades">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="eyebrow">Habilidades</span>
+          <h2>Stack técnico organizado para construir soluciones completas.</h2>
+          <p class="lead">Tecnologías y capacidades que uso para crear sitios, aplicaciones, sistemas internos y flujos digitales.</p>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card reveal">
+            <h3>Frontend</h3>
+            <div class="skill-tags">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Responsive Design</span>
+              <span>UI Implementation</span>
+              <span>Web UX</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <h3>Backend</h3>
+            <div class="skill-tags">
+              <span>Logica de negocio</span>
+              <span>APIs</span>
+              <span>Validaciones</span>
+              <span>Integraciones</span>
+              <span>Mantenimiento</span>
+              <span>Automatización</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <h3>Bases de datos</h3>
+            <div class="skill-tags">
+              <span>SQL</span>
+              <span>MySQL</span>
+              <span>PostgreSQL</span>
+              <span>Modelado de datos</span>
+              <span>Consultas</span>
+              <span>Organización de información</span>
+            </div>
+          </article>
+
+          <article class="skill-card reveal">
+            <h3>Herramientas</h3>
+            <div class="skill-tags">
+              <span>Git</span>
+              <span>GitHub</span>
+              <span>GitHub Pages</span>
+              <span>Debugging</span>
+              <span>Despliegue web</span>
+              <span>Documentación</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contacto">
+      <div class="container">
+        <div class="cta-box reveal">
+          <span class="eyebrow">Contacto</span>
+          <h2>¿Necesitas una web, una aplicación o un desarrollador?</h2>
+          <p>Estoy disponible para proyectos freelance, colaboraciones remotas y oportunidades Full Stack donde pueda construir soluciones web con impacto real.</p>
+
+          <div class="cta-actions">
+            <a class="btn btn-primary" href="https://wa.me/573203914473?text=Hola%20William,%20quiero%20hablar%20sobre%20un%20proyecto%20web" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn-secondary" href="mailto:Daniloalvarez1719@gmail.com?subject=Contacto%20desde%20tu%20portafolio">Email</a>
+            <a class="btn btn-ghost" href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn btn-ghost" href="https://github.com/Rolo0317" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> William Danilo Solano Alvarez. Full Stack Developer | Remote-ready. v2.0</p>
+      <div class="footer-links">
+        <a href="mailto:Daniloalvarez1719@gmail.com">Email</a>
+        <a href="tel:+573203914473">Telefono</a>
+        <a href="https://github.com/Rolo0317" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://rolo0317.github.io/portafolio-web/" target="_blank" rel="noopener">Portafolio</a>
       </div>
     </div>
-  </section>
-
-  <!-- ═══════════════ SOBRE MÍ ═══════════════ -->
-  <section id="sobre">
-    <div class="container">
-      <div class="sobre-grid">
-        <div class="sobre-text reveal">
-          <span class="section-label">Sobre mí</span>
-          <h2 class="section-title">Convierto datos<br>en decisiones</h2>
-          <p>
-            Soy <strong>Data Analyst</strong> con más de 5 años de experiencia transformando
-            datos complejos en insights accionables. Trabajo en <strong>GROUPCOS</strong> desde
-            2020, donde lidero iniciativas de automatización y analítica avanzada.
-          </p>
-          <p>
-            Mi enfoque combina rigor técnico con visión de negocio: desarrollo pipelines en
-            <strong>Python</strong>, construyo dashboards estratégicos en <strong>Power BI</strong>
-            e integro soluciones de <strong>IA generativa</strong> para reducir tiempos operativos.
-          </p>
-          <div class="highlight-box">
-            "Creo que el valor real del dato no está en tenerlo, sino en la velocidad con que
-            puedes convertirlo en una decisión."
-          </div>
-        </div>
-
-        <div class="sobre-cards reveal">
-          <div class="info-card">
-            <div class="ic">[CO]</div>
-            <div class="ic-text">
-              <div class="label">Empresa actual</div>
-              <div class="value">GROUPCOS · 2020 – actualidad</div>
-            </div>
-          </div>
-          <div class="info-card">
-            <div class="ic">[GEO]</div>
-            <div class="ic-text">
-              <div class="label">Ubicación</div>
-              <div class="value">Colombia</div>
-            </div>
-          </div>
-          <div class="info-card">
-            <div class="ic">[@]</div>
-            <div class="ic-text">
-              <div class="label">Email</div>
-              <div class="value">Daniloalvarez1719@gmail.com</div>
-            </div>
-          </div>
-          <div class="info-card">
-            <div class="ic">[TEL]</div>
-            <div class="ic-text">
-              <div class="label">Teléfono</div>
-              <div class="value">+57 320 391 4473</div>
-            </div>
-          </div>
-          <div class="info-card">
-            <div class="ic">[>]</div>
-            <div class="ic-text">
-              <div class="label">Especialidad</div>
-              <div class="value">Python · Power BI · IA Aplicada</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════ LOGROS ═══════════════ -->
-  <section id="logros">
-    <div class="container">
-      <span class="section-label reveal">Logros</span>
-      <h2 class="section-title reveal">Impacto medible</h2>
-      <p class="section-desc reveal">
-        Resultados concretos que demuestran el valor de aplicar analítica avanzada
-        a los procesos del negocio.
-      </p>
-
-      <div class="logros-grid">
-        <div class="logro-card reveal">
-          <span class="logro-icon">[!!]</span>
-          <span class="logro-num">−40%</span>
-          <div class="logro-title">Reducción en tiempos de reportería</div>
-          <div class="logro-desc">
-            Automatización de reportes recurrentes con Python + pandas, eliminando
-            procesos manuales y liberando horas de trabajo semanales.
-          </div>
-        </div>
-        <div class="logro-card reveal">
-          <span class="logro-icon">[++]</span>
-          <span class="logro-num">RT</span>
-          <div class="logro-title">Dashboards en tiempo real</div>
-          <div class="logro-desc">
-            Desarrollo de tableros interactivos en Power BI conectados a múltiples
-            fuentes para soporte en la toma de decisiones estratégicas.
-          </div>
-        </div>
-        <div class="logro-card reveal">
-          <span class="logro-icon">[~~]</span>
-          <span class="logro-num">N+</span>
-          <div class="logro-title">Integración multi-fuente</div>
-          <div class="logro-desc">
-            Pipelines de datos que consolidan información de APIs REST, bases de datos
-            relacionales y fuentes externas en un único flujo analítico.
-          </div>
-        </div>
-        <div class="logro-card reveal">
-          <span class="logro-icon">[AI]</span>
-          <span class="logro-num">IA</span>
-          <div class="logro-title">Automatización con IA Generativa</div>
-          <div class="logro-desc">
-            Implementación de flujos inteligentes con modelos de IA para clasificación,
-            generación y procesamiento automatizado de información.
-          </div>
-        </div>
-        <div class="logro-card reveal">
-          <span class="logro-icon">[DB]</span>
-          <span class="logro-num">SQL</span>
-          <div class="logro-title">Arquitectura de datos robusta</div>
-          <div class="logro-desc">
-            Diseño y optimización de consultas en MySQL, PostgreSQL y caché con Redis
-            para mejorar el rendimiento de sistemas de datos críticos.
-          </div>
-        </div>
-        <div class="logro-card reveal">
-          <span class="logro-icon">[CI]</span>
-          <span class="logro-num">CI</span> 
-          <div class="logro-title">Infraestructura con Docker</div>
-          <div class="logro-desc">
-            Contenerización de soluciones de analítica para garantizar reproducibilidad,
-            portabilidad y escalabilidad en entornos productivos.
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════ STACK ═══════════════ -->
-  <section id="stack">
-    <div class="container">
-      <span class="section-label reveal">Stack técnico</span>
-      <h2 class="section-title reveal">Herramientas &amp; tecnologías</h2>
-      <p class="section-desc reveal">
-        Un stack completo que cubre desde la ingesta de datos hasta la visualización
-        y automatización con inteligencia artificial.
-      </p>
-
-      <div class="stack-categories reveal">
-        <div class="stack-cat">
-          <div class="stack-cat-title">//Lenguajes</div>
-          <div class="tags">
-            <span class="tag accent">Python</span>
-            <span class="tag accent">SQL</span>
-            <span class="tag">JavaScript</span>
-          </div>
-        </div>
-        <div class="stack-cat">
-          <div class="stack-cat-title">//Datos &amp; Análisis</div>
-          <div class="tags">
-            <span class="tag accent">Pandas</span>
-            <span class="tag accent">NumPy</span>
-            <span class="tag">Matplotlib</span>
-            <span class="tag">OpenPyXL</span>
-          </div>
-        </div>
-        <div class="stack-cat">
-          <div class="stack-cat-title">// Bases de datos</div>
-          <div class="tags">
-            <span class="tag">MySQL</span>
-            <span class="tag">PostgreSQL</span>
-            <span class="tag">Redis</span>
-          </div>
-        </div>
-        <div class="stack-cat">
-          <div class="stack-cat-title">//Visualización</div>
-          <div class="tags">
-            <span class="tag accent">Power BI</span>
-            <span class="tag accent">Excel Avanzado</span>
-            <span class="tag">Matplotlib</span>
-          </div>
-        </div>
-        <div class="stack-cat">
-          <div class="stack-cat-title">//Infraestructura</div>
-          <div class="tags">
-            <span class="tag">Docker</span>
-            <span class="tag">APIs REST</span>
-            <span class="tag">Git</span>
-          </div>
-        </div>
-        <div class="stack-cat">
-          <div class="stack-cat-title">// IA &amp; Automatización</div>
-          <div class="tags">
-            <span class="tag accent">IA Generativa</span>
-            <span class="tag">LLMs</span>
-            <span class="tag">Pipelines IA</span>
-          </div>
-        </div>
-        <div class="stack-cat">
-          <div class="stack-cat-title">//Front-End</div>
-          <div class="tags">
-            <span class="tag">HTML</span>
-            <span class="tag">CSS</span>
-            <span class="tag">JavaScript</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Skill bars -->
-      <div class="skill-bar-wrap reveal" style="margin-top:2.5rem; max-width:600px;">
-        <div class="skill-bar-item">
-          <div class="skill-bar-header"><span>Python</span><span>90%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-header"><span>Power BI</span><span>88%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-header"><span>SQL</span><span>85%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-header"><span>Excel Avanzado</span><span>80%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
-        </div>
-        <div class="skill-bar-item">
-          <div class="skill-bar-header"><span>Docker / DevOps</span><span>65%</span></div>
-          <div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════ FORMACIÓN ═══════════════ -->
-  <section id="formacion">
-    <div class="container">
-      <span class="section-label reveal">Formación</span>
-      <h2 class="section-title reveal">Educación &amp; Certificaciones</h2>
-      <p class="section-desc reveal">
-        Aprendizaje continuo como pilar del crecimiento profesional.
-      </p>
-
-      <div class="timeline reveal">
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <div class="timeline-year">2025</div>
-            <div class="timeline-title">Desarrollo Web Front-End</div>
-            <div class="timeline-inst">Universidad de los Andes</div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <div class="timeline-year">2024</div>
-            <div class="timeline-title">Power BI — Análisis y Visualización de Datos</div>
-            <div class="timeline-inst">CET Colsubsidio</div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <div class="timeline-year">2022</div>
-            <div class="timeline-title">Excel Avanzado</div>
-            <div class="timeline-inst">CET Colsubsidio</div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-dot"></div>
-          <div class="timeline-card">
-            <div class="timeline-year">2020</div>
-            <div class="timeline-title">Técnico en Operaciones Comerciales y Financieras</div>
-            <div class="timeline-inst">SENA — Servicio Nacional de Aprendizaje</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════ CERTIFICADOS ═══════════════ -->
-  <section id="certificados">
-    <div class="container">
-      <span class="section-label reveal">Certificados</span>
-      <h2 class="section-title reveal">Formación verificada</h2>
-      <p class="section-desc reveal">
-        Documentos y certificaciones que respaldan mi trayectoria profesional y académica.
-      </p>
-
-      <div class="cert-grid">
-
-        <div class="cert-card reveal">
-          <div class="cert-icon">[PDF]</div>
-          <div class="cert-name">CV William Solano 2026</div>
-          <a href="certificados/CV_William_Solano_2026.pdf" target="_blank" rel="noopener" class="cert-btn">
-            Ver documento →
-          </a>
-        </div>
-
-        <div class="cert-card reveal">
-          <div class="cert-icon">[CERT]</div>
-          <div class="cert-name">Desarrollo Web Front-End</div>
-          <a href="certificados/certificado_desarrollo_web_front-end.pdf" target="_blank" rel="noopener" class="cert-btn">
-            Ver certificado →
-          </a>
-        </div>
-
-        <div class="cert-card reveal">
-          <div class="cert-icon">[CERT]</div>
-          <div class="cert-name">English Basics I</div>
-          <a href="certificados/certificado_english_basics_I.pdf" target="_blank" rel="noopener" class="cert-btn">
-            Ver certificado →
-          </a>
-        </div>
-
-        <div class="cert-card reveal">
-          <div class="cert-icon">[CERT]</div>
-          <div class="cert-name">English Basics II</div>
-          <a href="certificados/certificado_english_basics_II.pdf" target="_blank" rel="noopener" class="cert-btn">
-            Ver certificado →
-          </a>
-        </div>
-
-        <div class="cert-card reveal">
-          <div class="cert-icon">[CERT]</div>
-          <div class="cert-name">Herramienta Básica Excel</div>
-          <a href="certificados/herramienta basica excel.pdf" target="_blank" rel="noopener" class="cert-btn">
-            Ver certificado →
-          </a>
-        </div>
-
-        <div class="cert-card reveal">
-          <div class="cert-icon">[CERT]</div>
-          <div class="cert-name">Servicio al Cliente</div>
-          <a href="certificados/servicio al cliente.pdf" target="_blank" rel="noopener" class="cert-btn">
-            Ver certificado →
-          </a>
-        </div>
-
-        <div class="cert-card reveal">
-          <div class="cert-icon">[CERT]</div>
-          <div class="cert-name">Técnico en Operaciones Comerciales</div>
-          <a href="certificados/tecmico en operaciones comerciales.pdf" target="_blank" rel="noopener" class="cert-btn">
-            Ver certificado →
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════ CONTACTO ═══════════════ -->
-  <section id="contacto">
-    <div class="container">
-      <span class="section-label reveal">Contacto</span>
-      <h2 class="section-title reveal">Hablemos</h2>
-
-      <div class="contact-grid">
-        <div class="contact-info reveal">
-          <p>
-            ¿Tienes un proyecto de datos, necesitas automatizar procesos o construir
-            un dashboard que realmente impacte? Estoy disponible para colaborar.
-          </p>
-          <div class="contact-links">
-            <a href="mailto:Daniloalvarez1719@gmail.com" class="contact-link">
-              <div class="cl-icon">[@]</div>
-              <span>Daniloalvarez1719@gmail.com</span>
-            </a>
-            <a href="tel:+573203914473" class="contact-link">
-              <div class="cl-icon">[TEL]</div>
-              <span>+57 320 391 4473</span>
-            </a>
-            <a href="https://www.linkedin.com/in/" target="_blank" rel="noopener" class="contact-link">
-              <div class="cl-icon">[IN]</div>
-              <span>LinkedIn — William Solano</span>
-            </a>
-            <a href="https://github.com/" target="_blank" rel="noopener" class="contact-link">
-              <div class="cl-icon">[GH]</div>
-              <span>GitHub — Proyectos &amp; código</span>
-            </a>
-          </div>
-        </div>
-
-        <form class="contact-form reveal" id="contactForm" novalidate>
-          <div class="form-group">
-            <label for="name">Nombre</label>
-            <input type="text" id="name" placeholder="Tu nombre" required />
-          </div>
-          <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" placeholder="tu@email.com" required />
-          </div>
-          <div class="form-group">
-            <label for="message">Mensaje</label>
-            <textarea id="message" placeholder="Cuéntame sobre tu proyecto o consulta…" required></textarea>
-          </div>
-          <div class="form-status" id="formStatus"></div>
-          <button type="submit" class="btn btn-primary">Enviar mensaje →</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══════════════ FOOTER ═══════════════ -->
-  <footer>
-    <p>
-      Diseñado &amp; desarrollado por
-      <strong>William Danilo Solano Álvarez</strong>
-      · Data Analyst · © <span id="year"></span>
-    </p>
   </footer>
 
-  <!-- ═══════════════ JAVASCRIPT ═══════════════ -->
+  <a class="floating-whatsapp" href="https://wa.me/573203914473?text=Hola%20William,%20quiero%20hablar%20sobre%20un%20proyecto%20web" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">WA</a>
+
   <script>
-    // ── Year ──
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const year = document.getElementById("year");
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const revealItems = document.querySelectorAll(".reveal");
 
-    // ── Matrix digital rain ──
-    (function () {
-      const canvas = document.getElementById('matrixCanvas');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-      const chars = '01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホ ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%^&*()_+-=[]{}|;:,./<>?ｦｧｨｩｪｫｬｭｮｯｱｲｳｴｵ';
-      const fontSize = 14;
-      let cols, drops;
+    year.textContent = new Date().getFullYear();
 
-      function resize() {
-        canvas.width  = canvas.offsetWidth;
-        canvas.height = canvas.offsetHeight;
-        cols  = Math.floor(canvas.width / fontSize);
-        drops = Array(cols).fill(1);
-      }
-      resize();
-      window.addEventListener('resize', resize, { passive: true });
-
-      function draw() {
-        ctx.fillStyle = 'rgba(0,0,0,.06)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.font = fontSize + 'px monospace';
-        for (let i = 0; i < cols; i++) {
-          const ch = chars[Math.floor(Math.random() * chars.length)];
-          const y  = drops[i] * fontSize;
-          ctx.globalAlpha = Math.random() > .97 ? 1 : .5;
-          ctx.fillStyle   = y < canvas.height * .25 ? '#ffffff' : '#00ff41';
-          ctx.fillText(ch, i * fontSize, y);
-          ctx.globalAlpha = 1;
-          if (y > canvas.height && Math.random() > .975) drops[i] = 0;
-          drops[i]++;
-        }
-      }
-      setInterval(draw, 45);
-    })();
-
-    // ── Hamburger ──
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('open');
-      mobileMenu.classList.toggle('open');
+    menuBtn.addEventListener("click", () => {
+      const isOpen = menuBtn.classList.toggle("open");
+      mobileMenu.classList.toggle("open", isOpen);
+      menuBtn.setAttribute("aria-expanded", String(isOpen));
     });
 
-    document.querySelectorAll('.mobile-link').forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('open');
-        mobileMenu.classList.remove('open');
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        menuBtn.classList.remove("open");
+        mobileMenu.classList.remove("open");
+        menuBtn.setAttribute("aria-expanded", "false");
       });
     });
 
-    // ── Scroll reveal ──
-    const reveals = document.querySelectorAll('.reveal');
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          // stagger siblings
-          const siblings = [...entry.target.parentElement.children].filter(el => el.classList.contains('reveal'));
-          const idx = siblings.indexOf(entry.target);
-          entry.target.style.transitionDelay = `${idx * 80}ms`;
-          entry.target.classList.add('visible');
-          revealObserver.unobserve(entry.target);
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-    reveals.forEach(el => revealObserver.observe(el));
-
-    // ── Skill bars ──
-    const bars = document.querySelectorAll('.skill-bar-fill');
-    const barObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const fill = entry.target;
-          fill.style.width = fill.dataset.width + '%';
-          barObserver.unobserve(fill);
-        }
-      });
-    }, { threshold: 0.5 });
-
-    bars.forEach(bar => barObserver.observe(bar));
-
-    // ── Nav active highlight ──
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
-
-    const sectionObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const id = entry.target.id;
-          navLinks.forEach(a => {
-            a.style.color = a.getAttribute('href') === `#${id}`
-              ? 'var(--accent)' : '';
-          });
-        }
-      });
-    }, { threshold: 0.4 });
-
-    sections.forEach(s => sectionObserver.observe(s));
-
-    // ── Navbar shadow on scroll ──
-    window.addEventListener('scroll', () => {
-      document.getElementById('navbar').style.boxShadow =
-        window.scrollY > 20 ? '0 4px 24px rgba(0,0,0,.4)' : '';
-    }, { passive: true });
-
-    // ── Contact form (mailto fallback) ──
-    document.getElementById('contactForm').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const name    = document.getElementById('name').value.trim();
-      const email   = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
-      const status  = document.getElementById('formStatus');
-
-      if (!name || !email || !message) {
-        status.textContent = 'Por favor completa todos los campos.';
-        status.className = 'form-status error';
-        return;
-      }
-
-      const subject = encodeURIComponent(`Contacto desde portafolio — ${name}`);
-      const body    = encodeURIComponent(`Nombre: ${name}\nEmail: ${email}\n\n${message}`);
-      window.location.href = `mailto:Daniloalvarez1719@gmail.com?subject=${subject}&body=${body}`;
-
-      status.textContent = '¡Gracias! Se abrirá tu cliente de correo para enviar el mensaje.';
-      status.className = 'form-status success';
-      this.reset();
+    }, {
+      threshold: 0.12,
+      rootMargin: "0px 0px -40px 0px"
     });
+
+    revealItems.forEach((item) => observer.observe(item));
   </script>
 </body>
 </html>
