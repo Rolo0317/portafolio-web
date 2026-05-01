@@ -6,1169 +6,382 @@
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
-  <meta name="portfolio-version" content="v2.0-full-stack-2026-04-30" />
-  <title>William Solano | Full Stack Developer | Remote-ready</title>
-  <meta name="description" content="Full Stack Developer que crea aplicaciones, sitios web y sistemas internos para ayudar a negocios a vender más y operar mejor." />
+  <meta name="portfolio-version" content="v3.0-business-full-stack-2026-05-01" />
+
+  <title>William Solano | Full Stack Developer | Web Applications | Remote-ready</title>
+  <meta name="description" content="Full Stack Developer orientado a negocio. Desarrollo landing pages, aplicaciones web, sistemas internos y automatización para empresas, marcas personales y equipos remotos." />
   <meta name="author" content="William Danilo Solano Alvarez" />
+
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="William Solano | Full Stack Developer | Web Applications" />
-  <meta property="og:description" content="Desarrollo soluciones web completas, desde landing pages hasta sistemas a medida, enfocadas en resultados reales." />
+  <meta property="og:title" content="William Solano | Full Stack Developer | Remote-ready" />
+  <meta property="og:description" content="Desarrollo soluciones web completas enfocadas en negocio: landing pages, aplicaciones, sistemas internos y automatización." />
   <meta property="og:image" content="foto_corporativa/foto_corporativa.jpeg" />
   <meta property="og:url" content="https://rolo0317.github.io/portafolio-web/" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    :root {
-      --bg: #0B0F14;
-      --bg-soft: #0f1621;
-      --card: #121826;
-      --card-strong: #172033;
-      --text: #F8FAFC;
-      --muted: #94A3B8;
-      --soft: #CBD5E1;
-      --accent: #38BDF8;
-      --success: #22C55E;
-      --success-dark: #16A34A;
-      --border: rgba(148, 163, 184, 0.16);
-      --shadow: 0 18px 48px rgba(0, 0, 0, 0.28);
-      --radius: 8px;
-      --radius-sm: 6px;
-      --max: 1120px;
-      --transition: 180ms ease;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 86px;
-    }
-
-    body {
-      min-height: 100vh;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at 18% 12%, rgba(56, 189, 248, 0.13), transparent 30%),
-        radial-gradient(circle at 82% 8%, rgba(34, 197, 94, 0.10), transparent 28%),
-        var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    p {
-      color: var(--muted);
-    }
-
-    .container {
-      width: min(100% - 32px, var(--max));
-      margin: 0 auto;
-    }
-
-    .section {
-      padding: 88px 0;
-    }
-
-    .section-header {
-      max-width: 760px;
-      margin-bottom: 36px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 12px;
-      color: var(--accent);
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 28px;
-      height: 1px;
-      background: var(--accent);
-    }
-
-    h1, h2, h3 {
-      line-height: 1.12;
-      letter-spacing: 0;
-    }
-
-    h1 {
-      max-width: 940px;
-      font-size: clamp(2.45rem, 7vw, 5.25rem);
-      font-weight: 900;
-    }
-
-    h2 {
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      font-weight: 850;
-      margin-bottom: 16px;
-    }
-
-    h3 {
-      font-size: 1.18rem;
-      font-weight: 800;
-      margin-bottom: 10px;
-    }
-
-    .lead {
-      max-width: 740px;
-      color: var(--soft);
-      font-size: clamp(1.02rem, 2vw, 1.2rem);
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 0 18px;
-      border: 1px solid transparent;
-      border-radius: var(--radius-sm);
-      font-weight: 800;
-      color: var(--text);
-      cursor: pointer;
-      transition: transform var(--transition), background var(--transition), border-color var(--transition), box-shadow var(--transition);
-      white-space: nowrap;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      text-decoration: none;
-    }
-
-    .btn-primary {
-      background: var(--success);
-      color: #04110A;
-      box-shadow: 0 14px 32px rgba(34, 197, 94, 0.22);
-    }
-
-    .btn-primary:hover {
-      background: var(--success-dark);
-    }
-
-    .btn-secondary {
-      background: rgba(56, 189, 248, 0.10);
-      border-color: rgba(56, 189, 248, 0.34);
-      color: var(--text);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(56, 189, 248, 0.16);
-      border-color: var(--accent);
-    }
-
-    .btn-ghost {
-      background: rgba(248, 250, 252, 0.04);
-      border-color: var(--border);
-      color: var(--soft);
-    }
-
-    .btn-ghost:hover {
-      border-color: var(--accent);
-      color: var(--text);
-    }
-
-    .nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(11, 15, 20, 0.82);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(16px);
-    }
-
-    .nav-inner {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-    }
-
-    .brand {
-      display: flex;
-      flex-direction: column;
-      line-height: 1.2;
-    }
-
-    .brand strong {
-      font-size: 0.98rem;
-      letter-spacing: 0.02em;
-    }
-
-    .brand span {
-      color: var(--muted);
-      font-size: 0.78rem;
-    }
-
-    .nav-links {
-      display: none;
-      align-items: center;
-      gap: 18px;
-      color: var(--soft);
-      font-size: 0.92rem;
-      font-weight: 700;
-    }
-
-    .nav-links a {
-      transition: color var(--transition);
-    }
-
-    .nav-links a:hover {
-      color: var(--accent);
-    }
-
-    .menu-btn {
-      width: 44px;
-      height: 44px;
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 5px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      cursor: pointer;
-    }
-
-    .menu-btn span {
-      width: 20px;
-      height: 2px;
-      background: var(--text);
-      transition: transform var(--transition), opacity var(--transition);
-    }
-
-    .menu-btn.open span:nth-child(1) {
-      transform: translateY(7px) rotate(45deg);
-    }
-
-    .menu-btn.open span:nth-child(2) {
-      opacity: 0;
-    }
-
-    .menu-btn.open span:nth-child(3) {
-      transform: translateY(-7px) rotate(-45deg);
-    }
-
-    .mobile-menu {
-      display: none;
-      padding: 0 16px 18px;
-    }
-
-    .mobile-menu.open {
-      display: grid;
-      gap: 8px;
-    }
-
-    .mobile-menu a {
-      padding: 12px 14px;
-      background: rgba(248, 250, 252, 0.04);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      color: var(--soft);
-      font-weight: 750;
-    }
-
-    .hero {
-      min-height: calc(100vh - 72px);
-      display: grid;
-      align-items: center;
-      padding: 76px 0 70px;
-    }
-
-    .hero-grid {
-      display: grid;
-      gap: 42px;
-      align-items: center;
-    }
-
-    .hero-copy {
-      display: grid;
-      gap: 22px;
-    }
-
-    .status-pill {
-      width: fit-content;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 12px;
-      background: rgba(18, 24, 38, 0.86);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      color: var(--soft);
-      font-size: 0.86rem;
-      font-weight: 750;
-    }
-
-    .status-pill::before {
-      content: "";
-      width: 9px;
-      height: 9px;
-      border-radius: 50%;
-      background: var(--success);
-      box-shadow: 0 0 0 7px rgba(34, 197, 94, 0.10);
-    }
-
-    .hero-actions,
-    .cta-actions,
-    .card-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .hero-proof {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 8px;
-    }
-
-    .proof-item {
-      padding: 16px;
-      background: rgba(18, 24, 38, 0.78);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-    }
-
-    .proof-item strong {
-      display: block;
-      color: var(--text);
-      font-size: 1.05rem;
-      margin-bottom: 4px;
-    }
-
-    .proof-item span {
-      color: var(--muted);
-      font-size: 0.88rem;
-    }
-
-    .hero-card {
-      background: linear-gradient(180deg, rgba(18, 24, 38, 0.92), rgba(15, 22, 33, 0.92));
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .hero-photo {
-      aspect-ratio: 1 / 1;
-      background: var(--card-strong);
-      overflow: hidden;
-    }
-
-    .hero-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-    }
-
-    .hero-card-body {
-      padding: 22px;
-      display: grid;
-      gap: 16px;
-    }
-
-    .hero-card-body h2 {
-      font-size: 1.35rem;
-      margin-bottom: 0;
-    }
-
-    .availability {
-      display: grid;
-      gap: 10px;
-    }
-
-    .availability li {
-      list-style: none;
-      display: flex;
-      gap: 10px;
-      color: var(--soft);
-      font-size: 0.95rem;
-    }
-
-    .availability li::before {
-      content: "+";
-      color: var(--success);
-      font-weight: 900;
-    }
-
-    .about-grid,
-    .experience-grid,
-    .cta-box {
-      display: grid;
-      gap: 26px;
-    }
-
-    .about-panel,
-    .case-card,
-    .service-card,
-    .skill-card,
-    .experience-card,
-    .step-card,
-    .cta-box {
-      background: rgba(18, 24, 38, 0.88);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.18);
-    }
-
-    .about-panel {
-      padding: 24px;
-    }
-
-    .about-panel p + p {
-      margin-top: 14px;
-    }
-
-    .value-list {
-      display: grid;
-      gap: 12px;
-    }
-
-    .value-item {
-      padding: 18px;
-      background: rgba(56, 189, 248, 0.07);
-      border: 1px solid rgba(56, 189, 248, 0.16);
-      border-radius: var(--radius);
-    }
-
-    .value-item strong {
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .grid-3,
-    .grid-4,
-    .skills-grid {
-      display: grid;
-      gap: 16px;
-    }
-
-    .service-card,
-    .skill-card,
-    .step-card {
-      padding: 22px;
-      transition: transform var(--transition), border-color var(--transition), background var(--transition);
-    }
-
-    .service-card:hover,
-    .skill-card:hover,
-    .step-card:hover,
-    .case-card:hover,
-    .experience-card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(56, 189, 248, 0.42);
-      background: var(--card-strong);
-    }
-
-    .card-icon {
-      width: 42px;
-      height: 42px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 18px;
-      background: rgba(56, 189, 248, 0.12);
-      border: 1px solid rgba(56, 189, 248, 0.22);
-      border-radius: var(--radius-sm);
-      color: var(--accent);
-      font-weight: 900;
-      font-size: 0.82rem;
-    }
-
-    .steps {
-      margin-top: 34px;
-    }
-
-    .step-number {
-      color: var(--accent);
-      font-weight: 900;
-      margin-bottom: 10px;
-    }
-
-    .case-grid {
-      display: grid;
-      gap: 18px;
-    }
-
-    .case-card {
-      padding: 24px;
-      transition: transform var(--transition), border-color var(--transition), background var(--transition);
-    }
-
-    .case-top {
-      display: grid;
-      gap: 14px;
-      margin-bottom: 22px;
-    }
-
-    .case-tag {
-      width: fit-content;
-      padding: 6px 10px;
-      background: rgba(34, 197, 94, 0.10);
-      border: 1px solid rgba(34, 197, 94, 0.22);
-      border-radius: 999px;
-      color: #86EFAC;
-      font-size: 0.78rem;
-      font-weight: 800;
-    }
-
-    .case-details {
-      display: grid;
-      gap: 14px;
-      margin-bottom: 22px;
-    }
-
-    .case-details div {
-      padding: 14px;
-      background: rgba(11, 15, 20, 0.36);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-    }
-
-    .case-details strong {
-      display: block;
-      margin-bottom: 5px;
-      color: var(--text);
-    }
-
-    .tech-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 20px;
-    }
-
-    .tech-list span,
-    .skill-tags span {
-      display: inline-flex;
-      padding: 7px 10px;
-      background: rgba(248, 250, 252, 0.06);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      color: var(--soft);
-      font-size: 0.84rem;
-      font-weight: 700;
-    }
-
-    .experience-card {
-      position: relative;
-      padding: 24px;
-      transition: transform var(--transition), border-color var(--transition), background var(--transition);
-    }
-
-    .experience-card::before {
-      content: "";
-      position: absolute;
-      left: 24px;
-      top: 0;
-      width: 2px;
-      height: 100%;
-      background: linear-gradient(var(--accent), transparent);
-      opacity: 0.55;
-    }
-
-    .experience-content {
-      padding-left: 28px;
-    }
-
-    .role-meta {
-      color: var(--accent);
-      font-weight: 800;
-      margin-bottom: 10px;
-      font-size: 0.9rem;
-    }
-
-    .experience-content ul {
-      display: grid;
-      gap: 10px;
-      margin-top: 16px;
-      color: var(--muted);
-      padding-left: 18px;
-    }
-
-    .skill-card h3 {
-      margin-bottom: 14px;
-    }
-
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .cta {
-      padding-bottom: 92px;
-    }
-
-    .cta-box {
-      padding: 30px;
-      background:
-        linear-gradient(135deg, rgba(56, 189, 248, 0.13), rgba(34, 197, 94, 0.08)),
-        var(--card);
-    }
-
-    .cta-box p {
-      max-width: 700px;
-      margin-bottom: 22px;
-      color: var(--soft);
-      font-size: 1.05rem;
-    }
-
-    .footer {
-      border-top: 1px solid var(--border);
-      padding: 28px 0;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .footer-inner {
-      display: grid;
-      gap: 14px;
-      align-items: center;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .footer-links a {
-      color: var(--soft);
-      font-weight: 750;
-    }
-
-    .footer-links a:hover {
-      color: var(--accent);
-    }
-
-    .floating-whatsapp {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 60;
-      width: 56px;
-      height: 56px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--success);
-      color: #04110A;
-      border-radius: 50%;
-      box-shadow: 0 16px 36px rgba(34, 197, 94, 0.32);
-      font-weight: 900;
-      transition: transform var(--transition), background var(--transition);
-    }
-
-    .floating-whatsapp:hover {
-      transform: translateY(-3px) scale(1.03);
-      background: var(--success-dark);
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 520ms ease, transform 520ms ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (min-width: 680px) {
-      .grid-3,
-      .skills-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .grid-4 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .case-details {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .footer-inner {
-        grid-template-columns: 1fr auto;
-      }
-    }
-
-    @media (min-width: 940px) {
-      .nav-links {
-        display: flex;
-      }
-
-      .menu-btn,
-      .mobile-menu {
-        display: none !important;
-      }
-
-      .hero-grid {
-        grid-template-columns: minmax(0, 1.45fr) 360px;
-      }
-
-      .about-grid {
-        grid-template-columns: 1.1fr 0.9fr;
-      }
-
-      .grid-3 {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-      }
-
-      .grid-4 {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-
-      .experience-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .skills-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-      }
-    }
-
-    @media (max-width: 520px) {
-      .section {
-        padding: 68px 0;
-      }
-
-      .hero {
-        padding-top: 52px;
-      }
-
-      .hero-actions .btn,
-      .cta-actions .btn,
-      .card-actions .btn {
-        width: 100%;
-      }
-
-      .hero-proof {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=3.0.0" />
 </head>
 
 <body>
-  <header class="nav" id="top">
-    <div class="container nav-inner">
+  <header class="site-header" id="top">
+    <div class="container nav">
       <a class="brand" href="#hero" aria-label="Ir al inicio">
-        <strong>William Solano</strong>
-        <span>Full Stack Developer</span>
+        <span class="brand-mark">WS</span>
+        <span>
+          <strong>William Solano</strong>
+          <small>Full Stack Developer</small>
+        </span>
       </a>
 
-      <nav class="nav-links" aria-label="Navegacion principal">
-        <a href="#sobre">Sobre mí</a>
+      <nav class="nav-links" aria-label="Navegación principal">
         <a href="#servicios">Servicios</a>
         <a href="#proyectos">Proyectos</a>
         <a href="#experiencia">Experiencia</a>
-        <a href="#habilidades">Habilidades</a>
+        <a href="#diferencial">Diferencial</a>
         <a href="#contacto">Contacto</a>
       </nav>
 
-      <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menu" aria-expanded="false">
+      <a class="nav-cta" href="https://wa.me/573203914473?text=Hola%20William,%20quiero%20hablar%20sobre%20un%20proyecto%20web" target="_blank" rel="noopener">WhatsApp</a>
+
+      <button class="menu-button" id="menuButton" type="button" aria-label="Abrir menú" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
     </div>
 
-    <nav class="mobile-menu" id="mobileMenu" aria-label="Menu movil">
-      <a href="#sobre">Sobre mí</a>
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Menú móvil">
       <a href="#servicios">Servicios</a>
       <a href="#proyectos">Proyectos</a>
       <a href="#experiencia">Experiencia</a>
-      <a href="#habilidades">Habilidades</a>
+      <a href="#diferencial">Diferencial</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero" id="hero">
+    <section class="hero section-surface" id="hero">
       <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <span class="status-pill">Open to remote work (LATAM / US / Global)</span>
-          <h1>Full Stack Developer que crea aplicaciones y sitios web que ayudan a negocios a vender más y operar mejor</h1>
-          <p class="lead">Desarrollo soluciones web completas - desde landing pages hasta sistemas a medida - enfocadas en resultados reales.</p>
+        <div class="hero-content reveal">
+          <span class="availability-pill">🌍 Open to remote work</span>
+          <h1>Full Stack Developer que construye soluciones web que ayudan a negocios a crecer</h1>
+          <p class="hero-subtitle">Desarrollo aplicaciones, sistemas y páginas web enfocadas en resultados reales: clientes, automatización y eficiencia.</p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="https://wa.me/573203914473?text=Hola%20William,%20quiero%20hablar%20sobre%20un%20proyecto%20web" target="_blank" rel="noopener">Hablemos de tu proyecto</a>
-            <a class="btn btn-secondary" href="#proyectos">Ver proyectos</a>
+            <a class="button button-primary" href="https://wa.me/573203914473?text=Hola%20William,%20quiero%20hablar%20sobre%20un%20proyecto%20web" target="_blank" rel="noopener">Hablemos por WhatsApp</a>
+            <a class="button button-secondary" href="#proyectos">Ver proyectos</a>
           </div>
 
-          <div class="hero-proof" aria-label="Resumen profesional">
-            <div class="proof-item">
-              <strong>Frontend + Backend</strong>
-              <span>Interfaces, lógica de negocio y funcionalidades completas.</span>
-            </div>
-            <div class="proof-item">
-              <strong>Business-first</strong>
-              <span>Soluciones pensadas para clientes, procesos y resultados.</span>
-            </div>
+          <div class="hero-metrics" aria-label="Diferenciales principales">
+            <div><strong>✔ Experiencia en empresa real</strong><span>ASF Soluciones S.A.S</span></div>
+            <div><strong>✔ Desarrollo Full Stack</strong><span>Frontend, backend y lógica de negocio</span></div>
+            <div><strong>✔ Enfoque en negocio</strong><span>Soluciones útiles, no plantillas</span></div>
           </div>
         </div>
 
-        <aside class="hero-card reveal" aria-label="Perfil profesional">
-          <div class="hero-photo">
-            <img src="foto_corporativa/foto_corporativa.jpeg" alt="William Danilo Solano Alvarez" />
+        <aside class="hero-profile reveal" aria-label="Perfil de William Solano">
+          <div class="profile-image">
+            <img src="foto_corporativa/foto_corporativa.jpeg" alt="William Danilo Solano Alvarez, Full Stack Developer" />
           </div>
-          <div class="hero-card-body">
+          <div class="profile-card">
+            <span class="profile-kicker">Remote-ready</span>
             <h2>William Danilo Solano Alvarez</h2>
-            <ul class="availability">
-              <li>Full Stack Developer</li>
-              <li>Freelance projects available</li>
-              <li>Remote-ready from Colombia</li>
-            </ul>
-            <a class="btn btn-ghost" href="mailto:Daniloalvarez1719@gmail.com">Daniloalvarez1719@gmail.com</a>
+            <p>Full Stack Developer | Web Applications | Remote-ready</p>
+            <div class="profile-links">
+              <a href="https://www.linkedin.com/in/william-danilo-solano-alvarez-2b13853b6" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://github.com/Rolo0317" target="_blank" rel="noopener">GitHub</a>
+            </div>
           </div>
         </aside>
       </div>
     </section>
 
-    <section class="section" id="sobre">
-      <div class="container about-grid">
-        <div class="section-header reveal">
+    <section class="section section-plain" id="sobre">
+      <div class="container split-layout">
+        <div class="section-heading reveal">
           <span class="eyebrow">Sobre mí</span>
-          <h2>Construyo tecnología con foco en negocio, no solo pantallas bonitas.</h2>
-          <p class="lead">Mi trabajo combina desarrollo web, pensamiento de producto y criterio práctico para transformar necesidades reales en soluciones digitales claras, mantenibles y útiles.</p>
+          <h2>Desarrollo con criterio técnico y mentalidad de negocio.</h2>
         </div>
 
-        <div class="about-panel reveal">
-          <p>Actualmente trabajo en <strong>ASF Soluciones S.A.S</strong>, desarrollando funcionalidades web, interfaces, lógica de negocio y mejoras para aplicaciones usadas en contextos reales.</p>
-          <p>Me enfoco en entender el problema antes de escribir código: qué proceso se quiere mejorar, qué usuario lo necesita y qué resultado debe generar la solución.</p>
-          <p>También vengo de experiencia en <strong>GROUPCOS</strong>, donde fortalecí mi criterio operativo, la comunicación con equipos y la capacidad de trabajar con procesos, usuarios y necesidades del negocio.</p>
-        </div>
-
-        <div class="value-list reveal">
-          <div class="value-item">
-            <strong>Soluciones completas</strong>
-            <p>Desde estructura visual hasta lógica, datos, formularios, flujos y despliegue.</p>
-          </div>
-          <div class="value-item">
-            <strong>Enfoque comercial</strong>
-            <p>Desarrollo sitios y sistemas pensados para vender, ordenar procesos y reducir fricción.</p>
-          </div>
-          <div class="value-item">
-            <strong>Entrega clara</strong>
-            <p>Comunico avances, cuido detalles y priorizo código mantenible para evolucionar el producto.</p>
-          </div>
+        <div class="content-card about-copy reveal">
+          <p>Actualmente trabajo en <strong>ASF Soluciones S.A.S</strong>, donde participo en el desarrollo de soluciones web reales: interfaces, funcionalidades, lógica de negocio, mantenimiento y mejoras orientadas a procesos.</p>
+          <p>Mi enfoque es construir herramientas que tengan sentido para el negocio: páginas que convierten, aplicaciones que ordenan información y sistemas que reducen trabajo manual.</p>
+          <p>También cuento con experiencia previa en <strong>GROUPCOS</strong>, donde fortalecí mi comprensión de procesos, usuarios internos, comunicación y operación real.</p>
         </div>
       </div>
     </section>
 
-    <section class="section" id="servicios">
+    <section class="section section-surface" id="servicios">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">Servicios</span>
-          <h2>Desarrollo web para empresas, marcas y equipos que necesitan avanzar.</h2>
-          <p class="lead">Puedo ayudarte a lanzar presencia digital, crear herramientas internas o mejorar un sitio que ya existe.</p>
+        <div class="section-heading reveal">
+          <span class="eyebrow">Servicios freelance</span>
+          <h2>Soluciones web para vender, operar y escalar mejor.</h2>
+          <p>Trabajo con negocios, marcas personales y equipos que necesitan convertir una idea en una herramienta digital funcional.</p>
         </div>
 
-        <div class="grid-3">
+        <div class="cards-grid services-grid">
           <article class="service-card reveal">
-            <span class="card-icon">LP</span>
+            <span class="card-code">LP</span>
             <h3>Landing pages</h3>
-            <p>Paginas profesionales para vender servicios, captar leads, presentar marcas y lanzar campanas con mensajes claros.</p>
+            <p>Páginas comerciales para presentar servicios, captar leads y convertir visitas en conversaciones reales.</p>
           </article>
-
           <article class="service-card reveal">
-            <span class="card-icon">APP</span>
+            <span class="card-code">APP</span>
             <h3>Aplicaciones web</h3>
-            <p>Interfaces, formularios, paneles, flujos de usuario y funcionalidades conectadas a necesidades reales.</p>
+            <p>Interfaces, formularios, paneles y flujos web para productos o procesos que necesitan funcionar en navegador.</p>
           </article>
-
           <article class="service-card reveal">
-            <span class="card-icon">SYS</span>
+            <span class="card-code">SYS</span>
             <h3>Sistemas internos</h3>
-            <p>Herramientas para organizar información, gestionar procesos, reducir trabajo manual y mejorar seguimiento.</p>
+            <p>Herramientas para organizar datos, gestionar solicitudes, controlar procesos y mejorar la operación diaria.</p>
           </article>
-
           <article class="service-card reveal">
-            <span class="card-icon">AUTO</span>
+            <span class="card-code">AUTO</span>
             <h3>Automatización</h3>
-            <p>Flujos digitales para simplificar tareas repetitivas, conectar datos y mejorar la eficiencia del equipo.</p>
+            <p>Flujos digitales para reducir tareas repetitivas, conectar información y ahorrar tiempo operativo.</p>
           </article>
-
           <article class="service-card reveal">
-            <span class="card-icon">UX</span>
-            <h3>Rediseno web</h3>
-            <p>Modernización visual, mejor estructura, mensajes más fuertes, mejor responsive y CTAs orientados a conversión.</p>
+            <span class="card-code">UX</span>
+            <h3>Rediseño web</h3>
+            <p>Mejora visual, estructura más clara, llamadas a la acción visibles y experiencia responsive profesional.</p>
           </article>
-
           <article class="service-card reveal">
-            <span class="card-icon">DEV</span>
-            <h3>Soporte como developer</h3>
-            <p>Apoyo remoto para construir, mantener o mejorar productos web con criterio técnico y orientación a negocio.</p>
+            <span class="card-code">DEV</span>
+            <h3>Apoyo Full Stack</h3>
+            <p>Desarrollo remoto para equipos que necesitan avanzar con código mantenible y comunicación clara.</p>
           </article>
         </div>
 
-        <div class="steps">
-          <div class="section-header reveal">
-            <span class="eyebrow">Como trabajo</span>
-            <h2>Proceso simple, claro y enfocado en resultados.</h2>
-          </div>
-
-          <div class="grid-4">
-            <article class="step-card reveal">
-              <div class="step-number">01</div>
-              <h3>Entiendo el objetivo</h3>
-              <p>Reviso el negocio, el usuario, el problema y la meta principal del proyecto.</p>
-            </article>
-
-            <article class="step-card reveal">
-              <div class="step-number">02</div>
-              <h3>Defino la solucion</h3>
-              <p>Organizo estructura, funcionalidades, contenido y prioridades para construir con direccion.</p>
-            </article>
-
-            <article class="step-card reveal">
-              <div class="step-number">03</div>
-              <h3>Desarrollo y valido</h3>
-              <p>Creo la interfaz, conecto la lógica y reviso la experiencia en mobile y desktop.</p>
-            </article>
-
-            <article class="step-card reveal">
-              <div class="step-number">04</div>
-              <h3>Entrego y mejoro</h3>
-              <p>Dejo el proyecto listo para uso real, despliegue y futuras mejoras.</p>
-            </article>
+        <div class="work-process reveal">
+          <h3>Cómo trabajo</h3>
+          <div class="process-grid">
+            <div><strong>01. Diagnóstico</strong><span>Entiendo objetivo, usuario y proceso.</span></div>
+            <div><strong>02. Propuesta</strong><span>Defino estructura, alcance y prioridades.</span></div>
+            <div><strong>03. Desarrollo</strong><span>Construyo, valido y ajusto la experiencia.</span></div>
+            <div><strong>04. Entrega</strong><span>Dejo listo para uso, despliegue y mejora.</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="proyectos">
+    <section class="mid-cta">
+      <div class="container mid-cta-box reveal">
+        <div>
+          <span class="eyebrow">Proyecto en mente</span>
+          <h2>¿Tu negocio necesita verse mejor o trabajar más rápido?</h2>
+          <p>Te ayudo a transformar una necesidad en una página, aplicación o sistema web funcional.</p>
+        </div>
+        <a class="button button-primary" href="https://wa.me/573203914473?text=Hola%20William,%20quiero%20cotizar%20una%20soluci%C3%B3n%20web" target="_blank" rel="noopener">Cotizar solución web</a>
+      </div>
+    </section>
+
+    <section class="section section-plain" id="proyectos">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">Proyectos</span>
-          <h2>Casos de estudio construidos con enfoque de solucion.</h2>
-          <p class="lead">Cada proyecto parte de una necesidad y se convierte en una experiencia funcional, clara y facil de compartir.</p>
+        <div class="section-heading reveal">
+          <span class="eyebrow">Casos de estudio</span>
+          <h2>Proyectos presentados como soluciones, no como capturas de pantalla.</h2>
+          <p>Cada caso muestra el problema, la solución y el resultado que puede generar una buena implementación web.</p>
         </div>
 
-        <div class="case-grid">
-          <article class="case-card reveal">
-            <div class="case-top">
-              <span class="case-tag">Sitio narrativo personal</span>
+        <div class="project-list">
+          <article class="project-card featured-project reveal">
+            <div class="project-copy">
+              <span class="project-tag">Marca personal / storytelling</span>
               <h3>El Tapiz de Mi Vida - Laura Farfán</h3>
-              <p>Una experiencia web para presentar una historia personal de forma visual, emocional y organizada por capitulos.</p>
-            </div>
+              <p class="project-impact">Este proyecto ayudó a transformar una historia personal en una presencia digital profesional, visual y fácil de compartir.</p>
 
-            <div class="case-details">
-              <div>
-                <strong>Problema</strong>
-                <p>La cliente necesitaba convertir recuerdos, imágenes y momentos importantes en una página clara, emotiva y fácil de compartir.</p>
+              <div class="case-points">
+                <div>
+                  <strong>Problema</strong>
+                  <p>La cliente necesitaba presentar recuerdos, momentos importantes e identidad personal en una experiencia más profesional que una galería tradicional.</p>
+                </div>
+                <div>
+                  <strong>Solución</strong>
+                  <p>Desarrollé un sitio narrativo responsive con capítulos, navegación clara, secciones visuales y estructura pensada para lectura emocional.</p>
+                </div>
+                <div>
+                  <strong>Resultado</strong>
+                  <p>Una página memorable que convierte una historia personal en un activo digital útil para compartir, presentar y posicionar una marca personal.</p>
+                </div>
               </div>
-              <div>
-                <strong>Solucion</strong>
-                <p>Diseñé y desarrollé una landing narrativa con navegación interna, capítulos, galería visual, secciones temáticas y experiencia responsive.</p>
-              </div>
-              <div>
-                <strong>Resultado</strong>
-                <p>El sitio transforma una historia personal en una experiencia digital profesional, memorable y accesible desde cualquier dispositivo.</p>
-              </div>
-              <div>
-                <strong>Tecnologías</strong>
-                <p>HTML, CSS, JavaScript, responsive design, GitHub Pages.</p>
-              </div>
-            </div>
 
-            <div class="tech-list">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-              <span>Responsive</span>
-              <span>GitHub Pages</span>
-            </div>
+              <p class="commercial-note">Este tipo de solución puede aplicarse a influencers, coaches y marcas personales que quieren contar su historia de forma profesional.</p>
 
-            <div class="card-actions">
-              <a class="btn btn-secondary" href="https://rolo0317.github.io/laura-farfan/" target="_blank" rel="noopener">Ver proyecto</a>
+              <div class="tech-list">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Responsive design</span>
+                <span>GitHub Pages</span>
+              </div>
+
+              <a class="button button-secondary" href="https://rolo0317.github.io/laura-farfan/" target="_blank" rel="noopener">Ver proyecto</a>
             </div>
           </article>
 
-          <article class="case-card reveal">
-            <div class="case-top">
-              <span class="case-tag">Portafolio profesional</span>
+          <article class="project-card reveal">
+            <div class="project-copy">
+              <span class="project-tag">Portafolio profesional</span>
               <h3>Portafolio Full Stack Developer</h3>
-              <p>Landing profesional enfocada en empleo remoto, captación de clientes freelance y posicionamiento técnico.</p>
-            </div>
+              <p class="project-impact">Este proyecto ayudó a transformar un perfil técnico en una landing profesional orientada a empleo remoto y clientes freelance.</p>
 
-            <div class="case-details">
-              <div>
-                <strong>Problema</strong>
-                <p>El portafolio necesitaba comunicar valor profesional y servicios de forma directa, no solo mostrar información personal.</p>
+              <div class="case-points">
+                <div>
+                  <strong>Problema</strong>
+                  <p>El sitio necesitaba comunicar valor, experiencia y servicios con más claridad comercial.</p>
+                </div>
+                <div>
+                  <strong>Solución</strong>
+                  <p>Reestructuré el contenido en hero, servicios, casos de estudio, experiencia, diferenciadores y CTAs de contacto.</p>
+                </div>
+                <div>
+                  <strong>Resultado</strong>
+                  <p>Una presencia web más competitiva para reclutadores, clientes y conversaciones de negocio.</p>
+                </div>
               </div>
-              <div>
-                <strong>Solucion</strong>
-                <p>Reestructure el sitio con hero comercial, servicios, casos de estudio, experiencia, habilidades y llamados a la accion visibles.</p>
-              </div>
-              <div>
-                <strong>Resultado</strong>
-                <p>La página queda preparada para procesos de selección, clientes freelance y conversaciones comerciales con enlaces de contacto directos.</p>
-              </div>
-              <div>
-                <strong>Tecnologías</strong>
-                <p>HTML semántico, CSS responsive, JavaScript ligero, GitHub Pages.</p>
-              </div>
-            </div>
 
-            <div class="tech-list">
-              <span>HTML</span>
-              <span>CSS Grid</span>
-              <span>Flexbox</span>
-              <span>JavaScript</span>
-              <span>Conversion UX</span>
-            </div>
+              <div class="tech-list">
+                <span>HTML semántico</span>
+                <span>CSS modular</span>
+                <span>JavaScript</span>
+                <span>UX conversion</span>
+                <span>GitHub Pages</span>
+              </div>
 
-            <div class="card-actions">
-              <a class="btn btn-secondary" href="https://rolo0317.github.io/portafolio-web/" target="_blank" rel="noopener">Ver proyecto</a>
+              <a class="button button-secondary" href="https://rolo0317.github.io/portafolio-web/?v=3.0.0" target="_blank" rel="noopener">Ver proyecto</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="experiencia">
+    <section class="section section-surface" id="experiencia">
       <div class="container">
-        <div class="section-header reveal">
+        <div class="section-heading reveal">
           <span class="eyebrow">Experiencia</span>
-          <h2>Experiencia aplicada a productos, procesos y usuarios reales.</h2>
-          <p class="lead">He trabajado en entornos donde la tecnología debe resolver necesidades concretas, mejorar flujos y entregar valor operativo.</p>
+          <h2>Experiencia en procesos reales, mantenibilidad e impacto operativo.</h2>
+          <p>Trabajo con una visión completa: entender el proceso, construir la funcionalidad y cuidar que el código pueda evolucionar.</p>
         </div>
 
         <div class="experience-grid">
           <article class="experience-card reveal">
-            <div class="experience-content">
-              <div class="role-meta">Actualidad</div>
-              <h3>Full Stack Developer - ASF Soluciones S.A.S</h3>
-              <p>Desarrollo soluciones web reales combinando frontend, backend, interfaces, funcionalidades y lógica de negocio.</p>
-              <ul>
-                <li>Construcción y mejora de funcionalidades para aplicaciones web.</li>
-                <li>Implementación de interfaces claras, mantenibles y orientadas al usuario.</li>
-                <li>Desarrollo de lógica de negocio para soportar procesos internos.</li>
-                <li>Mejora continua de flujos, estabilidad y experiencia de uso.</li>
-                <li>Análisis de necesidades para convertir requerimientos en soluciones prácticas.</li>
-              </ul>
-            </div>
+            <span class="timeline-label">Actualidad</span>
+            <h3>Full Stack Developer - ASF Soluciones S.A.S</h3>
+            <p>Desarrollo soluciones web reales para procesos de negocio, combinando frontend, backend, lógica de negocio, mantenimiento y mejora continua.</p>
+            <ul>
+              <li>Construcción de funcionalidades orientadas a procesos reales y necesidades operativas.</li>
+              <li>Implementación de interfaces claras, mantenibles y enfocadas en experiencia de usuario.</li>
+              <li>Desarrollo y ajuste de lógica de negocio para soportar flujos internos.</li>
+              <li>Mejora de mantenibilidad, estructura y escalabilidad de funcionalidades existentes.</li>
+              <li>Participación en soluciones con impacto en eficiencia, orden de información y operación diaria.</li>
+            </ul>
           </article>
 
           <article class="experience-card reveal">
-            <div class="experience-content">
-              <div class="role-meta">Experiencia anterior</div>
-              <h3>GROUPCOS</h3>
-              <p>Experiencia en un entorno operativo y orientado a procesos, fortaleciendo comunicacion, analisis de necesidades y criterio de negocio.</p>
-              <ul>
-                <li>Trabajo con procesos, información y necesidades de usuarios internos.</li>
-                <li>Participación en dinámicas de mejora operativa y servicio.</li>
-                <li>Desarrollo de habilidades de comunicación, organización y resolución de problemas.</li>
-                <li>Comprension de flujos de trabajo reales para proponer mejoras digitales.</li>
-              </ul>
-            </div>
+            <span class="timeline-label">Experiencia anterior</span>
+            <h3>GROUPCOS</h3>
+            <p>Experiencia en un entorno operativo que fortaleció mi criterio de negocio, comunicación y comprensión de usuarios reales.</p>
+            <ul>
+              <li>Trabajo con procesos, información y necesidades de usuarios internos.</li>
+              <li>Participación en dinámicas de mejora operativa y servicio.</li>
+              <li>Comunicación clara con equipos y enfoque en resolución de problemas.</li>
+              <li>Comprensión de flujos reales para proponer soluciones digitales más útiles.</li>
+            </ul>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="habilidades">
+    <section class="section section-plain" id="diferencial">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">Habilidades</span>
-          <h2>Stack técnico organizado para construir soluciones completas.</h2>
-          <p class="lead">Tecnologías y capacidades que uso para crear sitios, aplicaciones, sistemas internos y flujos digitales.</p>
+        <div class="section-heading reveal">
+          <span class="eyebrow">Diferencial</span>
+          <h2>¿Por qué trabajar conmigo?</h2>
+          <p>No vendo solo código. Construyo soluciones web con intención, claridad y foco en resultados.</p>
+        </div>
+
+        <div class="cards-grid differentiator-grid">
+          <article class="differentiator-card reveal">
+            <h3>No solo desarrollo, entiendo el negocio</h3>
+            <p>Antes de construir, busco entender qué proceso mejora, qué usuario lo usará y qué resultado debe producir.</p>
+          </article>
+          <article class="differentiator-card reveal">
+            <h3>Enfoque en resultados</h3>
+            <p>Priorizo páginas que generan conversaciones, sistemas que ahorran tiempo y aplicaciones que resuelven problemas reales.</p>
+          </article>
+          <article class="differentiator-card reveal">
+            <h3>Comunicación clara</h3>
+            <p>Trabajo con avances visibles, lenguaje directo y decisiones explicadas para que el proyecto no se vuelva una caja negra.</p>
+          </article>
+          <article class="differentiator-card reveal">
+            <h3>Soluciones reales, no plantillas</h3>
+            <p>Adapto estructura, contenido y experiencia al objetivo del negocio, no a un diseño genérico.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section linkedin-section">
+      <div class="container linkedin-card reveal">
+        <div>
+          <span class="eyebrow">LinkedIn alineado</span>
+          <h2>Full Stack Developer | Web Applications | Remote-ready</h2>
+          <p>Desarrollo soluciones web completas enfocadas en negocio: landing pages, aplicaciones, sistemas internos y automatización. Actualmente en ASF Soluciones S.A.S.</p>
+          <strong>Open to remote opportunities</strong>
+        </div>
+        <a class="button button-secondary" href="https://www.linkedin.com/in/william-danilo-solano-alvarez-2b13853b6" target="_blank" rel="noopener">Ver LinkedIn</a>
+      </div>
+    </section>
+
+    <section class="section section-surface" id="habilidades">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span class="eyebrow">Stack técnico</span>
+          <h2>Herramientas para construir de punta a punta.</h2>
         </div>
 
         <div class="skills-grid">
           <article class="skill-card reveal">
             <h3>Frontend</h3>
-            <div class="skill-tags">
-              <span>HTML</span>
-              <span>CSS</span>
-              <span>JavaScript</span>
-              <span>Responsive Design</span>
-              <span>UI Implementation</span>
-              <span>Web UX</span>
+            <div class="tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive Design</span><span>UI Implementation</span><span>Web UX</span>
             </div>
           </article>
-
           <article class="skill-card reveal">
             <h3>Backend</h3>
-            <div class="skill-tags">
-              <span>Logica de negocio</span>
-              <span>APIs</span>
-              <span>Validaciones</span>
-              <span>Integraciones</span>
-              <span>Mantenimiento</span>
-              <span>Automatización</span>
+            <div class="tags">
+              <span>Lógica de negocio</span><span>APIs</span><span>Validaciones</span><span>Integraciones</span><span>Mantenibilidad</span><span>Automatización</span>
             </div>
           </article>
-
           <article class="skill-card reveal">
             <h3>Bases de datos</h3>
-            <div class="skill-tags">
-              <span>SQL</span>
-              <span>MySQL</span>
-              <span>PostgreSQL</span>
-              <span>Modelado de datos</span>
-              <span>Consultas</span>
-              <span>Organización de información</span>
+            <div class="tags">
+              <span>SQL</span><span>MySQL</span><span>PostgreSQL</span><span>Modelado de datos</span><span>Consultas</span>
             </div>
           </article>
-
           <article class="skill-card reveal">
             <h3>Herramientas</h3>
-            <div class="skill-tags">
-              <span>Git</span>
-              <span>GitHub</span>
-              <span>GitHub Pages</span>
-              <span>Debugging</span>
-              <span>Despliegue web</span>
-              <span>Documentación</span>
+            <div class="tags">
+              <span>Git</span><span>GitHub</span><span>GitHub Pages</span><span>Debugging</span><span>Deploy web</span><span>Documentación</span>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="cta" id="contacto">
-      <div class="container">
-        <div class="cta-box reveal">
-          <span class="eyebrow">Contacto</span>
-          <h2>¿Necesitas una web, una aplicación o un desarrollador?</h2>
-          <p>Estoy disponible para proyectos freelance, colaboraciones remotas y oportunidades Full Stack donde pueda construir soluciones web con impacto real.</p>
-
-          <div class="cta-actions">
-            <a class="btn btn-primary" href="https://wa.me/573203914473?text=Hola%20William,%20quiero%20hablar%20sobre%20un%20proyecto%20web" target="_blank" rel="noopener">WhatsApp</a>
-            <a class="btn btn-secondary" href="mailto:Daniloalvarez1719@gmail.com?subject=Contacto%20desde%20tu%20portafolio">Email</a>
-            <a class="btn btn-ghost" href="https://www.linkedin.com/in/" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="btn btn-ghost" href="https://github.com/Rolo0317" target="_blank" rel="noopener">GitHub</a>
-          </div>
+    <section class="final-cta" id="contacto">
+      <div class="container final-cta-card reveal">
+        <span class="eyebrow">Hablemos</span>
+        <h2>¿Tienes una idea, negocio o proyecto? Te ayudo a convertirlo en una solución web real.</h2>
+        <p>Disponible para proyectos freelance, colaboraciones remotas y oportunidades Full Stack enfocadas en productos y procesos de negocio.</p>
+        <div class="cta-actions">
+          <a class="button button-primary" href="https://wa.me/573203914473?text=Hola%20William,%20quiero%20convertir%20mi%20idea%20en%20una%20soluci%C3%B3n%20web" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="button button-secondary" href="mailto:Daniloalvarez1719@gmail.com?subject=Proyecto%20web%20desde%20tu%20portafolio">Email</a>
+          <a class="button button-ghost" href="https://www.linkedin.com/in/william-danilo-solano-alvarez-2b13853b6" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="button button-ghost" href="https://github.com/Rolo0317" target="_blank" rel="noopener">GitHub</a>
         </div>
       </div>
     </section>
@@ -1176,53 +389,20 @@
 
   <footer class="footer">
     <div class="container footer-inner">
-      <p>© <span id="year"></span> William Danilo Solano Alvarez. Full Stack Developer | Remote-ready. v2.0</p>
+      <p>© <span id="year"></span> William Danilo Solano Alvarez. Full Stack Developer | Web Applications | Remote-ready. v3.0</p>
       <div class="footer-links">
         <a href="mailto:Daniloalvarez1719@gmail.com">Email</a>
-        <a href="tel:+573203914473">Telefono</a>
+        <a href="tel:+573203914473">Teléfono</a>
         <a href="https://github.com/Rolo0317" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://rolo0317.github.io/portafolio-web/" target="_blank" rel="noopener">Portafolio</a>
+        <a href="https://www.linkedin.com/in/william-danilo-solano-alvarez-2b13853b6" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
   </footer>
 
-  <a class="floating-whatsapp" href="https://wa.me/573203914473?text=Hola%20William,%20quiero%20hablar%20sobre%20un%20proyecto%20web" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">WA</a>
+  <a class="floating-whatsapp" href="https://wa.me/573203914473?text=Hola%20William,%20quiero%20hablar%20sobre%20un%20proyecto%20web" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+    <span>WhatsApp</span>
+  </a>
 
-  <script>
-    const year = document.getElementById("year");
-    const menuBtn = document.getElementById("menuBtn");
-    const mobileMenu = document.getElementById("mobileMenu");
-    const revealItems = document.querySelectorAll(".reveal");
-
-    year.textContent = new Date().getFullYear();
-
-    menuBtn.addEventListener("click", () => {
-      const isOpen = menuBtn.classList.toggle("open");
-      mobileMenu.classList.toggle("open", isOpen);
-      menuBtn.setAttribute("aria-expanded", String(isOpen));
-    });
-
-    mobileMenu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        menuBtn.classList.remove("open");
-        mobileMenu.classList.remove("open");
-        menuBtn.setAttribute("aria-expanded", "false");
-      });
-    });
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, {
-      threshold: 0.12,
-      rootMargin: "0px 0px -40px 0px"
-    });
-
-    revealItems.forEach((item) => observer.observe(item));
-  </script>
+  <script src="assets/js/main.js?v=3.0.0"></script>
 </body>
 </html>
