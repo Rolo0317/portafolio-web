@@ -7,12 +7,15 @@ Portafolio profesional de una sola página: perfil, logros, stack técnico, form
 
 ## Estructura
 
+Todo lo que enlaza la página vive en una sola ruta, `assets/`:
+
 ```
-index.html          Página completa
-assets/css/         Estilos
-assets/js/          Interacciones
-certificados/       PDF de la hoja de vida y los certificados que enlaza la página
-foto_corporativa/   Foto del perfil
+index.html                 Página completa
+assets/css/                Estilos
+assets/js/                 Interacciones
+assets/img/                Foto del perfil
+assets/docs/               Hoja de vida en PDF
+assets/docs/certificados/  Un PDF por certificado
 ```
 
 ## Trabajar en local

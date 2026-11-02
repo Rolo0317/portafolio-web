@@ -36,3 +36,13 @@ const revealObserver = new IntersectionObserver((entries) => {
 });
 
 revealItems.forEach((item) => revealObserver.observe(item));
+
+// El botón flotante sobra mientras el hero, con su propio WhatsApp, está en pantalla.
+const hero = document.getElementById("hero");
+const floatingWhatsapp = document.getElementById("floatingWhatsapp");
+
+if (hero && floatingWhatsapp) {
+  new IntersectionObserver(([entry]) => {
+    floatingWhatsapp.classList.toggle("visible", !entry.isIntersecting);
+  }).observe(hero);
+}
