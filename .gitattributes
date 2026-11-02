@@ -1,0 +1,5 @@
+# Los PDF e imagenes nunca se tratan como texto (evita que el cambio de fin de linea los dane).
+*.pdf binary
+*.jpg binary
+*.jpeg binary
+*.png binary
